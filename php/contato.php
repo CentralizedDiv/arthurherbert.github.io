@@ -24,6 +24,5 @@
     $email_body = "Você recebeu uma nova mensagem do site.\n\n"."Aqui estão os detalhes:\n\nNome: $name\n\n\Assunto: $assunto\n\nEmail: $email_address\n\nMensagem:\n$mensagem";
     
     $bool = mail($to, $email_subject ,$email_body, $headers, "r".$email_address);
-    var_dump($bool);die;
     return true;			
 ?>
