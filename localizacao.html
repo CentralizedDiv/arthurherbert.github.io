@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -10,21 +11,30 @@
     <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
     <title>Padaria Palmeiras</title>
 </head>
 
 <body>
     <div class="container-fluid topo hidden-xs">
-        <span class="glyphicon glyphicon-envelope"></span>
-        <p>palmeriaspadaria@gmail.com</p>
-        <span class="glyphicon glyphicon-earphone"></span>
-        <p>(31) 35987804</p>
-
-        <span class="glyphicon glyphicon-map-marker"></span>
-        <p>Avenida das palmeiras</p>
-    </div>
-    <!--NavBar-->
-    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="550">
+        <div class = "row mtopo">
+            <div class="col-md-3 ">
+                <span class="glyphicon glyphicon-envelope"></span><p>palmeriaspadaria@gmail.com</p>  
+            </div>
+            <div class="col-md-3">
+                <span class="glyphicon glyphicon-earphone"></span><p>(31) 35987804</p>
+            </div>
+            <div class="col-md-3">
+                <span class="glyphicon glyphicon-hourglass"></span><p>Aberto de 7h as 20h</p>
+            </div>
+            <div class="col-md-3 ">
+                <span class="glyphicon glyphicon-map-marker"></span><p>Avenida das palmeiras</p>
+            </div>
+        </div>
+    </div>      
+    <!--NavBar-->   
+<div class="nav-wrapper">
+    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="10">
         <div class="container text-center">
             <div class="navbar-header">
 
@@ -42,25 +52,26 @@
                     </div>
                 </a>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav  center hidden-xs">
-                    <li id="home"><a href="index.html">Home</a></li>
-                    <li id="contato"><a href="contato.html">Contato</a></li>
-                    <li id="localizacao"><a href="localizacao.html">Localização</a></li>
-                    <li id="servicos"><a href="servicos.html">Serviços</a></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav visible-xs">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="localizacao.html">Localização</a></li>
-                    <li><a href="servicos.html">Serviços</a></a>
-                    </li>
-                </ul>
-            </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav  center hidden-xs">
+                        <li id="home"><a href="index.html">Home</a></li>
+                        <li id="contato"><a href="contato.html">Contato</a></li>
+                        <li id="localizacao"><a href="localizacao.html">Localização</a></li>
+                        <li id="servicos"><a href="servicos.html">Serviços</a></a></li>
+                        <li id="cardapio"><a href="cardapio.html">Cardápio</a></a></li>
+                    </ul>
+                </div>
+                 <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav visible-xs">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="localizacao.html">Localização</a></li>
+                        <li><a href="servicos.html">Serviços</a></a></li>
+                        <li><a href="cardapio.html">Cardápio</a></a></li>
+                    </ul>
+                </div>
     </nav>
+    </div>
     <div class="container-fluid text-center">
         <div class="row map text-justify text-center">
             <h1 class="text-center">Onde Estamos</h1>
@@ -85,65 +96,65 @@
             </div>
 
         </div>
-        <div class="row footerInfo">
-            <div class="col-xs-12 col-md-12 hidden-xs">
-                <div class="row info">
-                    <div class="col-xs-4 col-md-4 pull-left">
-                        <span class="glyphicon glyphicon-envelope"></span>
-                        <p>palmeriaspadaria@gmail.com</p>
-                    </div>
-                    <div class="col-xs-4 col-md-4">
-                        <span class="glyphicon glyphicon-earphone"></span>
-                        <p>(31) 35987804</p>
-                    </div>
-                    <div class="col-xs-4 col-md-4 pull-right">
-                        <span class="glyphicon glyphicon-map-marker"></span>
-                        <p>Avenida das palmeiras</p>
+         <div class="row footerInfo">
+                <div class="col-xs-12 col-md-12 hidden-xs">
+                    <div class="row info">
+                        <div class="col-md-3 ">
+                            <span class="glyphicon glyphicon-envelope"></span><p>palmeriaspadaria@gmail.com</p>  
+                        </div>
+                        <div class="col-md-3">
+                            <span class="glyphicon glyphicon-earphone"></span><p>(31) 35987804</p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="glyphicon glyphicon-hourglass"></span><p>Aberto de 7h as 20h</p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <span class="glyphicon glyphicon-map-marker"></span><p>Avenida das palmeiras</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row footerContact text-center">
-            <div class="hidden-xs col-md-6">
-                <h1>Curta nossa página</h1>
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpadariapalmeiras1%2F&tabs&width=500&height=600&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="500" height="215"
-                    style="border:none; padding-bottom:0px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <div class="row footerContact text-center">
+                <div class="hidden-xs col-md-6">
+                    <h1>Curta nossa página</h1>
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpadariapalmeiras1%2F&tabs&width=500&height=600&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="500" height="215" style="border:none; padding-bottom:0px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+                <div class="col-xs-12 col-md-6 pull-right">
+                    <h1>Lista de Email</h1>
+                    <form>
+                        <div class="form-inline">
+                            <input type="email" class="input" id="email" placeholder="Digite seu email">
+                            <button type="submit" class="btn">Inscrever-se</button>
+                        </div>
+                    </form>
+                    <ul class="footer-menu list-inline hidden-xs">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="localizacao.html">Localização</a></li>
+                        <li><a href="servicos.html">Serviços</a></a></li>
+                        <li><a href="cardapio.html">Cardápio</a></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-12" >
+                    <p>2017 - Padaria Palmeiras -Todos os Direitos Reservados - Website desenvolvido por: Arthur Herbert e Pedro Moutinho</p>
+                </div>
+                
+                
+            
+            
             </div>
-            <div class="col-xs-12 col-md-6 pull-right">
-                <h1>Lista de Email</h1>
-                <form>
-                    <div class="form-inline">
-                        <input type="email" class="input" id="email" placeholder="Digite seu email">
-                        <button type="submit" class="btn">Inscrever-se</button>
-                    </div>
-                </form>
-                <ul class="footer-menu list-inline hidden-xs">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="localizacao.html">Localização</a></li>
-                    <li><a href="servicos.html">Serviços</a></a>
-                    </li>
-                    <li><a href="cardapio.html">Cardápio</a></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-md-12">
-                <p>2017 - Padaria Palmeiras -Todos os Direitos Reservados - Website desenvolvido por: Arthur Herbert e Pedro Moutinho</p>
-            </div>
+        
+        </div> 
 
 
-        </div>
 
-    </div>
-
-    </div>
+     
+    
 
     <script>
         $(function() {
-            $("#home").addClass("current");
+            $("#localizacao").addClass("current");
         });
-
-
         jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > 30 && jQuery(window).width() > 786) {
                 jQuery('#logo').fadeOut('slow');
