@@ -4,6 +4,11 @@
        margin:0;
     }
 }
+@media(min-width: 1300px){
+        .topo p{
+        font-size:1px;
+    }
+}
 @font-face {
 font-family: clarendon;
 src: url("../fonts/ClarenBd.ttf");
@@ -22,19 +27,18 @@ src: url("../fonts/Segan-Light.ttf");
 }
 
 .topo{
-	width: 100%
+	width: 100%;
+}
+.mtopo{
+    margin-left: 8%;
 }
 .topo span{
 	float: left;
 	padding-top: 20px;
-	padding-right: -75px;
-	padding-left: 150px;
 }
 .topo p{
 	display: inline;
-	margin-right:1000px;
 	float: left;
-	margin: 0px;
 	padding: 17px 0px 10px 5px;
 	font-size: 16px;
 	letter-spacing: 1px;
@@ -57,6 +61,7 @@ body{
     padding-top: -10px;
     width: 100%;
     z-index:10;
+
 }
 .affix + .container-fluid {
     padding-top: 10px;
@@ -103,6 +108,7 @@ body{
     font-size: 18px;
     letter-spacing: 2px;
     background-color: white;
+
 }
  .navbar-nav li a{
     color: #352618 !important;
@@ -181,7 +187,7 @@ h1{
 .info{
     padding:20px;
     width:100%;
-    padding-left:200px;
+    padding-left:10%;
 }
 .info p{
     font-size:12px;
@@ -243,4 +249,15 @@ h1{
 }
 .nav-wrapper{
     min-height: 50px;
+}
+
+.map {
+       padding-bottom: 5%;
+    background-color:#130d06;
+    color:#fff;
+}
+
+@media only screen and (max-width: 400px) {
+    .mobile-hide{ display: none !important; }
+   
 }
