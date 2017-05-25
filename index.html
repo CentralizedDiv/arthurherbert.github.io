@@ -81,6 +81,7 @@
 </div>
         <!--Carousel -->
         <div class= "cover">
+        <br class="visible-xs">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -198,6 +199,14 @@ $(function(){
 var $document = $(document),
 $element = $('#menu-bar');
 $nav = $('.navbar');
+if(jQuery(window).width() < 786){
+    $nav.stop().css({
+           top:'0px',
+           width:'100%',
+           position:'fixed',
+           'z-index':'10000'
+    });
+}
 $document.scroll(function() {
     if(jQuery(window).width() > 786){
         if ($document.scrollTop() >= 280) {
@@ -216,10 +225,6 @@ $document.scroll(function() {
                    width:'100%',
                    position:'fixed',
                    'z-index':'10000'
-            });
-        }else{
-            $nav.stop().css({
-                position:'relative'
             });
         }
     }
