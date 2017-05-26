@@ -1,0 +1,27 @@
+/*Configurações Gerais*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.content{
+    background-color:#130d06;
+    color:#fff;
+    padding:20px;
+    min-height: 100%;
+}
+
+/*Tabs*/
+.nav-tabs > li a{
+	color:white;
+	font-size:16px;
+}
+.nav-tabs > li a:hover{
+	color:#130d06;
+	background-color: white;
+}
+h2{
+	font-family: segan;
+	text-align:left;
+	font-size:25px;
+	padding-left: 20px;
+}
