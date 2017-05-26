@@ -25,8 +25,13 @@ h2{
 	font-size:25px;
 	padding-left: 20px;
 }
+.nav-mobile{
+	width: 100%;
+}
 .nav-mobile > li{
 	width: 50%;
 	float: left;
-
+}
+.nav-mobile > li a{
+	width: 100%;
 }
