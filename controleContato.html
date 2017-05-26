@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/controleContato.css">
+    <title>Padaria Palmeiras</title>
+</head>
+<body>
+<!--NavBar--> 
+<div id="menu-bar">
+    <ul class="menu-bar  hidden-xs">
+        <li id="home"><a href="index.html">Home</a></li>
+        <li id="contato"><a href="contato.html">Contato</a></li>
+    </ul>    
+</div>  
+<div class="nav-wrapper ">
+    <nav class="navbar navbar-default ">
+        <div class="container text-center">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand " href="#">
+                    <div id="logo">
+                        <img id="logoimg" class="visible-xs" src="imagens/logo.png" width="75px">
+                        <!-- this one will be visible on mobile -->
+                        <img id="logo" class="hidden-xs" src="imagens/logo.png" width="250px">
+                        <!-- this one will be visible on everything else -->
+                    </div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav  center hidden-xs">
+                    <li id=""><a href="index.html">Home</a></li>
+                    <li id=""><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse desgraca" id="myNavbar">
+                <ul class="nav navbar-nav visible-xs">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container-fluid text-center content">
+  	<div class="row">
+  		<div class = "col-md-12">
+		  <h1>Controle de Contato</h1>
+		  <ul class="nav nav-tabs nav-justified">
+		    <li class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
+		    <li><a data-toggle="tab" href="#trabalheConosco">Trabalhe Conosco</a></li>
+		    <li><a data-toggle="tab" href="#sugetRecla">Sugestão/Reclamação</a></li>
+		    <li><a data-toggle="tab" href="#outros">Outros</a></li>
+		  </ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tab-content">
+				<div id="fornecedor" class="tab-pane fade in active">
+					<h2>Contato de Fornecedores</h2>
+					<div class="table-responsive">
+					        <table class="table table-condensed table-bordered" style="width:100%">
+					           <thead>
+					              <tr>
+					                 <th>Data de Recebimento</th>
+					                 <th>Nome</th>
+					                 <th>Telefone</th>
+					              </tr>
+					           </thead>
+					           <tbody>
+					           		<tr>
+						           		<td width="15%">25 de Maio de 2017</td>
+	   									<td width="60%">Fornecedor de pão</td>
+	   									<td width="25%">(31)9 9367-6582</td>			
+					           		</tr>
+					           </tbody>
+					        </table>
+					    </div>
+				</div>		
+				<div id="trabalheConosco" class="tab-pane fade">
+				  <h2>Contato de Possíveis Colaboradores</h2>
+				  <div class="contatoFornecedor">
+					    <div class="table-responsive">
+					        <table class="table table-condensed table-bordered" style="width:100%">
+					           <thead>
+					              <tr>
+					                 <th>Data de Recebimento</th>
+					                 <th>Nome</th>
+					                 <th>Telefone</th>
+					              </tr>
+					           </thead>
+					           <tbody>
+					           		<tr>
+						           		<td width="15%">January</td>
+	   									<td width="60%">$100</td>
+	   									<td width="25%">x</td>			
+					           		</tr>
+					           </tbody>
+					        </table>
+					    </div>
+					</div>
+				</div>			
+				<div id="sugetRecla" class="tab-pane fade">
+				  <h2>Sugestões/Reclamações</h2>
+				  <div class="contatoFornecedor">
+					     <div class="table-responsive">
+					        <table class="table table-condensed table-bordered" style="width:100%">
+					           <thead>
+					              <tr>
+					                 <th>Data de Recebimento</th>
+					                 <th>Nome</th>
+					                 <th>Telefone</th>
+					              </tr>
+					           </thead>
+					           <tbody>
+					           		<tr>
+						           		<td width="15%">January</td>
+	   									<td width="60%">$100</td>
+	   									<td width="25%">x</td>			
+					           		</tr>
+					           </tbody>
+					        </table>
+					    </div>
+					</div>
+				</div>			
+				<div id="outros" class="tab-pane fade">
+				  <h2>Contatos Diversos</h2>
+				  <div class="contatoFornecedor">
+					     <div class="table-responsive">
+					        <table class="table table-condensed table-bordered" style="width:100%">
+					           <thead>
+					              <tr>
+					                 <th>Data de Recebimento</th>
+					                 <th>Nome</th>
+					                 <th>Telefone</th>
+					              </tr>
+					           </thead>
+					           <tbody>
+					           		<tr>
+						           		<td width="15%">January</td>
+	   									<td width="60%">$100</td>
+	   									<td width="25%">x</td>			
+					           		</tr>
+					           </tbody>
+					        </table>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+<script>
+	var $document = $(document),
+	$element = $('#menu-bar');
+	$nav = $('.navbar');
+	
+	$(function() {
+		$("#localizacao").addClass("current");
+	});
+
+	if(jQuery(window).width() < 786){
+		$nav.stop().css({
+			top:'0px',
+			width:'100%',
+			position:'fixed',
+			'z-index':'10000'
+		});
+	}
+	$document.scroll(function() {
+		if(jQuery(window).width() > 786){
+			if ($document.scrollTop() >= 280) {
+				$element.stop().css({
+					top: '0px'		
+				});
+			} else {
+				$element.stop().css({
+					top: '-200px'
+				});
+			}
+		}else{
+			if ($document.scrollTop() > 0) {
+				$nav.stop().css({
+					top:'0px',
+					width:'100%',
+					position:'fixed',
+					'z-index':'10000'
+				});
+			}
+		}
+	});
+</script>
+</body>
+</html>
