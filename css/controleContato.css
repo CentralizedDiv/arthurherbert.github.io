@@ -1,37 +1,64 @@
-/*Configurações Gerais*/
+/*General*/
 html, body {
     height: 100%;
     margin: 0;
 }
 .content{
-    background-color:#130d06;
+    background-image:url('../imagens/bg.jpg');
+    padding:20px;
     color:#fff;
     padding:20px;
     min-height: 100%;
 }
-
+h1.controleContato{
+	color:#130d06;
+}
 /*Tabs*/
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #130d06;
+  background:transparent;
+  color:#130d06;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #130d06;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+@media (max-width: 768px) {
+.nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    color:#130d06;
+  }
+}
 .nav-tabs > li a{
-	color:white;
+	color:#130d06;
 	font-size:16px;
 }
 .nav-tabs > li a:hover{
-	color:#130d06;
-	background-color: white;
+	color:white;
+	background-color: #130d06;
 }
 h2{
+	color:#130d06;
 	font-family: segan;
 	text-align:left;
 	font-size:25px;
 	padding-left: 20px;
 }
-.nav-mobile{
-	width: 100%;
+/*Table*/
+th{
+	background-color: #fefefe
 }
-.nav-mobile > li{
-	width: 50%;
-	float: left;
+table, td, tr, th, tbody, thead{
+	color:#130d06;
 }
-.nav-mobile > li a{
-	width: 100%;
-}
+tr:nth-child(even) {background-color: #fefefe}
