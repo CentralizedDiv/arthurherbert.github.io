@@ -19,6 +19,7 @@ h1.controleContato{
 .nav-tabs.nav-justified > .active > a:focus {
   border: 1px solid #130d06;
   background:transparent;
+  color:#130d06;
 }
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
@@ -29,6 +30,12 @@ h1.controleContato{
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
     border-bottom-color: #fff;
+  }
+}
+@media (max-width: 768px) {
+.nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
     color:#130d06;
   }
 }

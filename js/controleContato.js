@@ -1,4 +1,8 @@
 $(document).ready(function(){
+/*Start with the active table populated*/
+	var activeTabbed = ($.makeArray($('.tab-content > .active')))[0];
+	getDataSet(activeTabbed.id)
+
 /*Functions do call each 'getDataSet*/
 	$("#tabFor").on('click touch', function(){
 		getDataSet('fornecedor');
@@ -44,20 +48,33 @@ $(document).ready(function(){
   *
  **/
 	function populateAndUpdateTables(dataSet, tab){
-		var tab = tab;
-		var rows = $('#'+ tab).find('tbody > tr');
+		var tab   = tab;
+		var table = $('#'+ tab);
+		var rows  = $('#'+ tab).find('tbody > tr');
+		var headers = table.find('thead').find('th');
+		headers = $.makeArray(headers);
 		if($.isArray(dataSet)){
-			//get the rows of the current table and delete them
+			//Get the rows of the current table and delete them to update
 			var rows = $('#'+ tab).find('tbody > tr');
 			rows.each(function(){
 				$(this).remove();
 			})
 			dataSet.forEach(function(row){
-				//get the rows of the dataSet and populate the table with them
-				$('#'+ tab).find('tbody').append($('<tr>').attr('id', 'currentRow'));
+				//Get the rows of the dataSet and populate the table with them
+				table.find('tbody').append($('<tr>').attr('id', 'currentRow'));
+				//Build each row of the table, fields that have headers in html as visible and the rest as invisible
 				$.each(row, function(field, value){
-					$('#currentRow').append($('<td>').text(value));	
-				})
+					var isVisible = false;
+					headers.forEach(function(header){
+						if(header.id === field){
+							$('#currentRow').append($('<td>').text(value).css('display', 'table-cell'));
+							isVisible = true;
+						}
+					});	
+					if(!isVisible){
+						$('#currentRow').append($('<td>').text(value).css('display', 'none'));	
+					}			
+				});
 				$('#currentRow').removeAttr('id');		
 			})	
 		}

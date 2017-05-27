@@ -19,13 +19,16 @@ class ContatoTicket{
 		    while ($row = mysqli_fetch_array($resulBanco)) { // fetches a result row as an  array
 		        //create an Object with each row returned
 		        $object = new stdClass();
-		        $object->CDTIPCON = $row['CDTIPCON'];
-		        $object->NRSEQUE = $row['NRSEQUE'];
+		        $object->DTCONTA  = $row['DTCONTA'] ;
+		        $object->NOMECLIE = $row['NOMECLIE'];
+		        $object->EMAIL 	  = $row['EMAIL'];
 		        $object->NRSEQCON = $row['NRSEQCON'];
-		        $object->ASSUNTO = $row['ASSUNTO'];
-		        $object->DTCONTA = $row['DTCONTA'];
-		        $object->DTRESPO = $row['DTRESPO'];
-		        $object->CDOPERA = $row['CDOPERA'];
+		        $object->ASSUNTO  = $row['ASSUNTO'];
+		        $object->MENSAGEM = $row['MENSAGEM'];
+		        $object->NRSEQUE  = $row['NRSEQUE']; 
+		        $object->DTRESPO  = $row['DTRESPO'] ;
+		        $object->CDTIPCON = $row['CDTIPCON'];
+		        $object->CDOPERA  = $row['CDOPERA'] ;
 		        $result[] = $object;
 		    }
 		}
