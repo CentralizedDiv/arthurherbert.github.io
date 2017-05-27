@@ -13,8 +13,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/controleContato.css">
+    <script src="js/controleContato.js"></script>
     <title>Padaria Palmeiras</title>
 </head>
 <body>
@@ -24,16 +25,16 @@
   		<div class = "col-md-12">
 		  <h1>Controle de Contato</h1>
 		  <ul class="nav nav-tabs nav-justified hidden-xs">
-		    <li class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
-		    <li><a data-toggle="tab" href="#trabalheConosco">Trabalhe Conosco</a></li>
-		    <li><a data-toggle="tab" href="#sugetRecla">Sugestão/Reclamação</a></li>
-		    <li><a data-toggle="tab" href="#outros">Outros</a></li>
+		    <li id="tabFor" class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
+		    <li id="tabTra"><a data-toggle="tab" href="#trabalheConosco">Trabalhe Conosco</a></li>
+		    <li id="tabSug"><a data-toggle="tab" href="#sugRec">Sugestão/Reclamação</a></li>
+		    <li id="tabOut"><a data-toggle="tab" href="#outros">Outros</a></li>
 		  </ul>
 		  <ul class="nav nav-tabs nav-mobile visible-xs">
-		    <li class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
-		    <li><a data-toggle="tab" href="#trabalheConosco">Trabalhe Conosco</a></li>
-		    <li><a data-toggle="tab" href="#sugetRecla">Sugestão/Reclamação</a></li>
-		    <li><a data-toggle="tab" href="#outros">Outros</a></li>
+		    <li  id="tabFor" class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
+		    <li id="tabTra" ><a data-toggle="tab" href="#trabalheConosco">Trabalhe Conosco</a></li>
+		    <li id="tabSug" ><a data-toggle="tab" href="#sugRec">Sugestão/ Reclamação</a></li>
+		    <li id="tabOut" ><a data-toggle="tab" href="#outros">Outros</a></li>
 		  </ul>
 		</div>
 	</div>
@@ -43,19 +44,16 @@
 				<div id="fornecedor" class="tab-pane fade in active">
 					<h2>Contato de Fornecedores</h2>
 					<div class="table-responsive">
-					        <table class="table table-condensed table-bordered" style="width:100%">
+					        <table id="tableFornecedor" class="table table-condensed table-bordered" style="width:100%">
 					           <thead>
 					              <tr>
 					                 <th>Data de Recebimento</th>
 					                 <th>Nome</th>
-					                 <th>Telefone</th>
 					              </tr>
 					           </thead>
 					           <tbody>
 					           		<tr>
-						           		<td width="15%">25 de Maio de 2017</td>
-	   									<td width="60%">Fornecedor de pão</td>
-	   									<td width="25%">(31)9 9367-6582</td>			
+						           					
 					           		</tr>
 					           </tbody>
 					        </table>
@@ -84,7 +82,7 @@
 					    </div>
 					</div>
 				</div>			
-				<div id="sugetRecla" class="tab-pane fade">
+				<div id="sugRec" class="tab-pane fade">
 				  <h2>Sugestões/Reclamações</h2>
 				  <div class="contatoFornecedor">
 					     <div class="table-responsive">
