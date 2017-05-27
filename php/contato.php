@@ -24,6 +24,7 @@ class Contato{
     }
 
     function getContatoTrabalho() {
+        $result = $this->ticket->getDataTable('2');
         echo json_encode($result);
         return $result;
     }
