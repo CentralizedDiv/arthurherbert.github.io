@@ -59,6 +59,8 @@ $(document).ready(function(){
 			rows.each(function(){
 				$(this).remove();
 			})
+			//Sort the DataSet
+			dataSet = sortDataSetAccToHeaders(dataSet, headers);
 			dataSet.forEach(function(row){
 				//Get the rows of the dataSet and populate the table with them
 				table.find('tbody').append($('<tr>').attr('id', 'currentRow'));
@@ -78,7 +80,35 @@ $(document).ready(function(){
 				$('#currentRow').removeAttr('id');		
 			})	
 		}
-	}
+	};
+
+/**
+  *
+  * Function to sort the dataSet according to the headers passed as
+  * parameter, this headers are the 'th' tags from controleContato.html
+  *	@param {Array}: dataSet returned from backend with the contacts, 
+  * {Array}: array of headers: 'th' tags from html
+  *
+ **/
+
+	function sortDataSetAccToHeaders(dataSet, headers){
+		var sortedDataSet = [];
+		dataSet.forEach(function(row){
+			var sortedRow = {};
+			headers.forEach(function(header, index){
+				$.each(row, function(field, value){
+					if(field === header.id){
+						sortedRow[field] = value;
+					}
+					if(index === (headers.length -1)){
+						sortedRow[field] = value;	
+					}
+				});
+			});
+			sortedDataSet.push(sortedRow);			
+		});
+		return sortedDataSet;
+	};
 
 });
 
