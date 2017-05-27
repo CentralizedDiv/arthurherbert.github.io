@@ -18,19 +18,26 @@ class Contato{
         $this->ticket = $ticket;
     }
     function getContatoFornecedor() { 
-        return $this->ticket->getDataTable('1');
+        $result = $this->ticket->getDataTable('1');
+        echo json_encode($result);
+        return $result;
     }
 
     function getContatoTrabalho() {
-        return $this->ticket->getDataTable('2');
+        echo json_encode($result);
+        return $result;
     }
 
     function getContatoSugRec() {
-        return $this->ticket->getDataTable('3');
+        $result = $this->ticket->getDataTable('3');
+        echo json_encode($result);
+        return $result;
     }
 
     function getContatoOutros() {
-        return $this->ticket->getDataTable('4');
+        $result = $this->ticket->getDataTable('4');
+        echo json_encode($result);
+        return $result;
     }
 }
 
