@@ -3,28 +3,30 @@ require_once("contatoTicket.php");
 $ticket = new ContatoTicket();
 $contato = new Contato($ticket);
 //Verify if ajax pass the method and choose what parameter pass to the query
-if($isset($_POST['enviar'])) {
+
+if(isset($_POST['email']) && isset($_POST['assunto'])) {
     if(empty($_POST['name']) 
         || empty($_POST['email'])       
         || empty($_POST['assunto'])     
         || empty($_POST['mensagem'])
-        || empty($_POS['phone']) 
+        || empty($_POST['phone']) 
         || !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) {
                 echo "Existem campos em branco!";
                 return false;
     }
-    else if(!$contato->validarCelular($_POST['phone'])) {
+    /*else if(!$contato->validarCelular($_POST['phone'])) {
+        echo $contato->validarCelular($_POST['phone']);
         echo "Numero de celular invalido";
         return false;
-    }
+    }*/
     else {
-        $rowSave = array {
+        $rowSave = array(
             "NOMECLIE"  =>  $_POST['name'],
             "EMAIL"     =>  $_POST['email'],
-            "ASSUNTO"   =>  $_POST['assunto']  
-            "MENSAGEM"  =>  $_POST['mensagem']
-            "TELEFONE"  =>  $_POS['phone']
-        };
+            "ASSUNTO"   =>  $_POST['assunto'],  
+            "MENSAGEM"  =>  $_POST['mensagem'],
+            "TELEFONE"  =>  $_POST['phone']
+        );
         $contato->saveContato($rowSave);
     }
 
@@ -75,27 +77,17 @@ class Contato{
         return $sucesso;
     }
 
-    function validarCelular($celular) {
-        static $regex;
+    function validarCelular($telefone) {
+        $telefone= trim(str_replace('/', '', str_replace(' ', '', str_replace('-', '', str_replace(')', '', str_replace('(', '', $telefone))))));
 
-        if ($regex === null) {
-            //Coloquei em um array para identificar melhor
-            $ddds = implode('|', array(
-                11, 12, 13, 14, 15, 16, 17, 18, 19,
-                21, 22, 24, 27, 28,
-                91, 92, 93, 94, 95,
-                81, 82, 83, 84, 85, 86, 87,
-                31, 32, 33, 34, 35, 37, 38,
-                71, 73, 74, 75, 77, 79,
-                61, 62, 63, 64, 65, 66, 67, 68, 69,
-                49, 51, 53, 54, 55
-            ));
+        $regexTelefone = "^[0-9]{11}$";
 
-            //Gera a regex
-            $regex = '#^(\((' . $ddds . ')\) 9|\((?!' . $ddds . ')\d{2}\) )[6789]\d{3}-\d{4}$#';
+        //$regexCel = '/[0-9]{2}[6789][0-9]{3,4}[0-9]{4}/'; // Regex para validar somente celular
+        if (preg_match($regexTelefone, $telefone)) {
+            return true;
+        }else{
+            return false;
         }
-
-        return preg_match($regex, $celular) > 0;
     }
-
+}
 ?>
