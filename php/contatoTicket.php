@@ -3,10 +3,11 @@ class ContatoTicket{
 
 /**
   *
-  * Function to get the contacts from database 
+  * Function to get he contacts from database 
   *	param {String}: code to filter the query by type of contact
   *
  **/
+
 	public function getDataTable($assunto) {
 		//LINK QUEBRADASSO
 		//$link = new mysqli('mysql.hostinger.com.br', 'u832569433_arpe', 'SekA9KkSrt7U', 'u832569433_padar');
@@ -70,18 +71,33 @@ class ContatoTicket{
 		return $resulBanco;
 	}
 
+	public function updateContato($row) {
+		$RESPOSTA = $row['RESPOSTA']; 
+		$DTRESPO  = date("d/m/Y");
+		$NRSEQCON = $row['NRSEQCON'];
+		$resulBanco = $this->atualizaContato($RESPOSTA, $DTRESPO, $NRSEQCON);
+		return $resulBanco;
+	}
+
 
 	//----------------------------------------------------------------------------//
 
-	// Inser no banco os dados do contato
+	// InserE no banco os dados do contato
 	protected function insertBanco($NRSEQCON, $NOMECLIE, $EMAIL, $ASSUNTO, $TELEFONE, $MENSAGEM, $NRSEQUE, $DTCONTA,
 		$DTRESPO, $CDTIPCON, $CDOPERA) {
-
 		$link = new mysqli('localhost', 'root', '', 'padaria');
 		$query = "INSERT INTO `contatos`(`NRSEQCON`, `NOMECLIE`, `EMAIL`, `ASSUNTO`, `TELEFONE`, `MENSAGEM`, `NRSEQUE`, `DTCONTA`, `CDTIPCON`, `CDOPERA`) VALUES ('$NRSEQCON', '$NOMECLIE', '$EMAIL', '$ASSUNTO', '$TELEFONE', '$MENSAGEM', '$NRSEQUE', STR_TO_DATE('$DTCONTA', '%d/%m/%Y'), '$CDTIPCON', '$CDOPERA')";
 		$resulBanco = mysqli_query($link, $query);
 		return $resulBanco;
 		
+	}
+
+	// Atualiza ou insere a resposta do contato
+	protected function atualizaContato($RESPOSTA, $DTRESPO, $NRSEQCON) {
+		$link = new mysqli('localhost', 'root', '', 'padaria');
+		$query = "UPDATE `contatos` SET `RESPOSTA`= '$RESPOSTA' ,`DTRESPO`= '$DTRESPO' WHERE `NRSEQCON` = '$NRSEQCON'";
+		$resulBanco = mysqli_query($link, $query);
+		return $resulBanco;
 	}
 
 	// Gera os códigos sequencias para inserção no banco de dados 'contatos' e os grava no banco newCode
@@ -120,10 +136,6 @@ class ContatoTicket{
 					else if(intval($value['NRSEQUENCIAL']) - $sequencialMaxTipoContato > 1){
 						$stop = true;
 					}
-					else {
-						$sequencialMaxTipoContato = intval($value['NRSEQUENCIAL']) + 1;
-						$stop = true;
-					}
 				}
 			}
 		}
@@ -141,10 +153,6 @@ class ContatoTicket{
 					else if(intval($value['NRSEQUENCIAL']) - $sequencialMax > 1){
 						$stop = true;
 					}
-					else {
-						$sequencialMax = intval($value['NRSEQUENCIAL']) + 1;
-						$stop2 = true;
-					}
 				}
 			}
 		}
@@ -152,13 +160,11 @@ class ContatoTicket{
 			$sequencialMax = 0;
 		} 
 
-		
 		$sequencialTipoContato = $sequencialMaxTipoContato + 1; // acrescenta 1 ao maximo
 		$sequencial = $sequencialMax + 1;	// acrescenta 1 ao maximo
-		$sequencialLength = 11 - strlen($sequencial);
-		$sequencialTipoContatoLength = 5 - strlen($sequencialTipoContato); 
-		$sequencial = str_pad($sequencial, $sequencialLength, "0", STR_PAD_LEFT); // formata
-		$sequencialTipoContato = str_pad($sequencialTipoContato, $sequencialTipoContatoLength, "0", STR_PAD_LEFT); // formata
+		
+		$sequencial = str_pad($sequencial, 10, "0", STR_PAD_LEFT); // formata
+		$sequencialTipoContato = str_pad($sequencialTipoContato, 4, "0", STR_PAD_LEFT); // formata
 		$codigos = array("NRSEQCON" => $sequencial, "NRSEQUE" => $sequencialTipoContato);
 		$insert = "INSERT INTO `newcode`(`NRSEQUENCIAL`, `TABLEPK`) VALUES ('$sequencial','CONTATO')"; 
 		mysqli_query($link, $insert);

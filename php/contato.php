@@ -15,11 +15,10 @@ if(isset($_POST['dados'])){
                 echo "Existem campos em branco!";
                 return false;
     }
-    /*else if(!$contato->validarCelular($_POST['phone'])) {
-        echo $contato->validarCelular($_POST['phone']);
+    else if(!$contato->validarCelular($_POST['phone'])) {
         echo "Numero de celular invalido";
         return false;
-    }*/
+    }
     else {
         $rowSave = array(
             "NOMECLIE"  =>  $dados->name,
@@ -28,7 +27,7 @@ if(isset($_POST['dados'])){
             "MENSAGEM"  =>  $dados->mensagem,
             "TELEFONE"  =>  $dados->phone
         );
-        $contato->saveContato($rowSave);
+        $contato->saveContato($dados);
     }
 
 
@@ -72,16 +71,31 @@ class Contato{
         return $result;
     }
 
-    function saveContato($rowSave) {
-        $sucesso = $this->ticket->saveContato($rowSave);
+    function saveContato($dados) {
+        if(isset($dados->resposta)){
+            $rowSave = array(
+                "NRSEQCON" => $dados->NRSEQCON,
+                "RESPSOTA" => $dados->resposta
+            );
+            $sucesso = $this->ticket->updateContato($rowSave);
+        }
+        else {         
+            $rowSave = array(
+                "NOMECLIE"  =>  $dados->name,
+                "EMAIL"     =>  $dados->email,
+                "ASSUNTO"   =>  $dados->assunto,  
+                "MENSAGEM"  =>  $dados->mensagem,
+                "TELEFONE"  =>  $dados->phone
+            );
+            $sucesso = $this->ticket->saveContato($rowSave);
+        }
         echo json_encode($sucesso);
         return $sucesso;
     }
 
     function validarCelular($telefone) {
         $telefone= trim(str_replace('/', '', str_replace(' ', '', str_replace('-', '', str_replace(')', '', str_replace('(', '', $telefone))))));
-
-        $regexTelefone = "^[0-9]{11}$";
+        $regexTelefone = "^[0-9]{11}$^";
 
         //$regexCel = '/[0-9]{2}[6789][0-9]{3,4}[0-9]{4}/'; // Regex para validar somente celular
         if (preg_match($regexTelefone, $telefone)) {
