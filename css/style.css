@@ -311,3 +311,47 @@ h1{
     .mobile-hide{ display: none !important; }
    
 }
+.warning .help-block,
+.warning .control-label{
+    color: #eae85d;    
+}
+.help-block{ 
+    color:#ed5655;
+    
+}
+.has-error .help-block,
+.has-error .control-label {
+  color: #ed5655;
+}
+.has-error .form-control {
+  border-color: #ed5655;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.has-error .form-control:focus {
+  border-color: #ed5655;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+.success .help-block,
+.success .control-label,
+.success .radio,
+.success .checkbox,
+.success .radio-inline,
+.success .checkbox-inline,
+.success.radio label,
+.success.checkbox label,
+.success.radio-inline label,
+.success.checkbox-inline label {
+  color: #41a043;
+}
+.success .form-control {
+  border-color: #41a043;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.success .form-control:focus {
+  border-color: #41a043;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+}

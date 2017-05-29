@@ -27,8 +27,10 @@ class ContatoTicket{
 		        $object->NOMECLIE = $row['NOMECLIE'];
 		        $object->MENSAGEM = $row['MENSAGEM'];
 		        $object->CDTIPCON = $row['CDTIPCON'];
+		        $object->TELEFONE = $row['TELEFONE'];
 		        $object->DTRESPO  = $row['DTRESPO'] ;
 		        $object->CDOPERA  = $row['CDOPERA'] ;
+		        $object->RESPOSTA  = $row['RESPOSTA'] ;
 		        $result[] = $object;
 		    }
 		}

@@ -23,6 +23,10 @@
 <div class="container-fluid text-center content">
   	<div class="row">
   		<div class = "col-md-12">
+  		  <a href="index.html" class="container-action">
+  		  	<span class="glyphicon glyphicon-arrow-left"></span>
+  		  	Voltar
+  		  </a>
 		  <h1 class="controleContato">Controle de Contato</h1>
 		  <ul class="nav nav-tabs nav-justified ">
 		    <li id="tabFor" class="active"><a data-toggle="tab" href="#fornecedor">Fornecedor</a></li>
@@ -37,8 +41,8 @@
 			<div class="tab-content">
 				<div id="fornecedor" class="tab-pane fade in active">
 					<h2>Contato de Fornecedores</h2>
-					<div class="">
-					        <table id="tableFornecedor" class="table table-condensed table-bordered" style="width:100%">
+					<div class="table-responsive">
+					        <table id="tableFornecedor" class="table table-condensed table-bordered">
 					           <thead>
 					              <tr>
 					                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
@@ -47,16 +51,16 @@
 					              </tr>
 					           </thead>
 					           <tbody>
-					           
+					           <tr>
+					           </tr>
 					           </tbody>
 					        </table>
-					    </div>
+					</div>
 				</div>		
-				<div id="trabalheConosco" class="tab-pane fade">
+				<div id="trabalheConosco" class="tab-pane fade ">
 				  <h2>Contato de Possíveis Colaboradores</h2>
-				  <div class="contatoFornecedor">
 					    <div class="table-responsive">
-					        <table class="table table-condensed table-bordered" style="width:100%">
+					        <table class="table table-condensed table-bordered">
 					           <thead>
 					              <tr>
 					                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
@@ -68,51 +72,70 @@
 
 					           </tbody>
 					        </table>
-					    </div>
-					</div>
+						</div>
 				</div>			
 				<div id="sugRec" class="tab-pane fade">
-				  <h2>Sugestões/Reclamações</h2>
-				  <div class="contatoFornecedor">
-					     <div class="table-responsive">
-					        <table class="table table-condensed table-bordered" style="width:100%">
-					           <thead>
-					              <tr>
-					                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
-					                 <th width = "40%" id="NOMECLIE">Nome</th>
-					                 <th width = "40%" id="EMAIL">Email</th>
-					              </tr>
-					           </thead>
-					           <tbody>
+				  <h2>Sugestões/ Reclamações</h2>
+				     <div class="table-responsive">
+				        <table class="table table-condensed table-bordered">
+				           <thead>
+				              <tr>
+				                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
+				                 <th width = "40%" id="NOMECLIE">Nome</th>
+				                 <th width = "40%" id="EMAIL">Email</th>
+				              </tr>
+				           </thead>
+				           <tbody>
 
-					           </tbody>
-					        </table>
-					    </div>
+				           </tbody>
+				        </table>
 					</div>
 				</div>			
 				<div id="outros" class="tab-pane fade">
 				  <h2>Contatos Diversos</h2>
-				  <div class="contatoFornecedor">
-					     <div class="table-responsive">
-					        <table class="table table-condensed table-bordered" style="width:100%">
-					           <thead>
-					              <tr>
-					                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
-					                 <th width = "40%" id="NOMECLIE">Nome</th>
-					                 <th width = "40%" id="EMAIL">Email</th>
-					              </tr>
-					           </thead>
-					           <tbody>
+				     <div class="table-responsive">
+				        <table class="table table-condensed table-bordered">
+				           <thead>
+				              <tr>
+				                 <th width = "20%" id="DTCONTA">Data de Recebimento</th>
+				                 <th width = "40%" id="NOMECLIE">Nome</th>
+				                 <th width = "40%" id="EMAIL">Email</th>
+				              </tr>
+				           </thead>
+				           <tbody>
 
-					           </tbody>
-					        </table>
-					    </div>
+				           </tbody>
+				        </table>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
+</div>
+<div id="swipe" class="closed">
+	<a class="swipe-action">
+  		<span class="glyphicon glyphicon-arrow-left"></span>
+  		  	Voltar
+  	</a>
+  	<div class="panel panel-swipe">	
+	  	<div class="panel-heading">
+	  		<label name="NRSEQCON">Código da Mensagem: </label>
+	  		<label name="ASSUNTO">Tipo de Contato: </label>
+	  	</div>
+	    <div class="panel-body">
+	    	<label name="NOMECLIE" type="input">Nome: </label>
+	    	<label name="EMAIL" type="input">Email: </label>
+	    	<label name="TELEFONE" type="input">Telefone: </label>
+	    	<label name="MENSAGEM" type="textarea">Mensagem: </label>
+	    	<label name="RESPOSTA" type="textarea">Resposta: </label>	
+	    </div>
+	    <div class="panel-footer">
+	    	<label name="DTCONTA">Data de Recebimento: </label>
+	    </div>
+	</div>
 </div> 
+
 <script>
 	var $document = $(document),
 	$element = $('#menu-bar');

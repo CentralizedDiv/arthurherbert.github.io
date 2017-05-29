@@ -12,6 +12,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
     <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/controleContato.js"></script>
     <title>Padaria Palmeiras</title>
 </head>
 
@@ -96,49 +97,69 @@
 
             </div>
             <div class="col-xs-12 col-md-6 mobile-left pull-right">
-
-                <form class="form-horizontal">
-                    <h4 class="text-center hidden-xs">Se preferir utilize o formulario</h4>
-                    <div class="form-group">
-                        <label for="email">Nome:</label>
-                        <div>
-                            <input type="name" class="form-control" id="name" placeholder="Digite seu nome">
+                <form id="formContato" class="form-horizontal" novalidate>
+                    <div class="control-group form-group">
+                        <label class="control-label">Nome</label>
+                        <div class="controls">
+                            <input id="name" class = "form-control " required 
+                                data-validation-required-message="Digite seu Nome" 
+                                type="text" 
+                                placeholder ="Digite seu nome"
+                            />
+                            <p class="help-block"></p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <div>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <div class="control-group form-group">
+                        <label class="control-label">Email</label>
+                        <div class="controls">
+                            <input id="email" class = "form-control " required 
+                                data-validation-required-message="Digite seu email" 
+                                data-validation-email-message="Digite um email válido"
+                                type="email" 
+                                placeholder ="Digite seu email"
+                            />
+                            <p class="help-block"></p>
                         </div>
                     </div>
-                     <div class="form-group">
-                        <label for="email">Telefone:</label>
-                        <div>
-                            <input type="phone" class="form-control" id="phone" placeholder="(XX) XXXXX-XXXX">
+                    <div class="control-group form-group">
+                        <label class="control-label">Telefone</label>
+                        <div class="controls">
+                            <input id="phone" class = "form-control " required 
+                                data-validation-required-message="Digite seu telefone" 
+                                data-validation-number-message="Digite um telefone válido"
+                                type="number" 
+                                placeholder ="(xx) xxxx-xxxx"
+                            />
+                            <p class="help-block"></p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div>
-
-                            <label for="assunto">Assunto:</label>
+                    <div class="control-group form-group">
+                        <label class="control-label">Assunto</label>
+                        <div class="controls">
                             <select class="form-control" id="assunto">
                                 <option>Quero ser um fornecedor</option>
                                 <option>Trabalhe Conosco</option>
                                 <option>Sugestão/Reclamação</option>
                                 <option>Outros</option>
                             </select>
-
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="comment">Sua Mensagem:</label>
-                        <textarea class="form-control" rows="5" id="mensagem"></textarea>
+                    <div class="control-group form-group">
+                        <label class="control-label">Mensagem</label>
+                        <div class="controls">
+                            <textarea id="mensagem" rows="5" class = "form-control " required 
+                                data-validation-required-message="Digite uma mensagem" 
+                                type="text" 
+                                placeholder ="Mande-nos uma mensagem"
+                            /></textarea> 
+                            <p class="help-block"></p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                            <button type="submit" class="btn-contato">Submit</button>
+                    <div class="form-actions form-group">
+                        <button type="submit" class="btn btn-contato">Enviar Mensagem<i class="icon-ok icon-white"></i></button>
                     </div>
                 </form>
-            </div>
+                  </div>
         </div>
 
             <div class="row footerInfo">
@@ -183,7 +204,7 @@
                 <div class="col-xs-12 col-md-12" >
                     <p>2017 - Padaria Palmeiras -Todos os Direitos Reservados - Website desenvolvido por: Arthur Herbert e Pedro Moutinho</p>
                 </div>
-                
+                    
                 
             
             

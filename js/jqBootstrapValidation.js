@@ -46,7 +46,7 @@
             if (
               $controlGroup.hasClass("warning")
             ) {
-              $controlGroup.removeClass("warning").addClass("error");
+              $controlGroup.removeClass("warning").addClass("has-error");
               warningsFound++;
             }
           });
@@ -464,7 +464,7 @@
               // Were there any errors?
               if (errorsFound.length) {
                 // Better flag it up as a warning.
-                $controlGroup.removeClass("success error").addClass("warning");
+                $controlGroup.removeClass("success has-error").addClass("warning");
 
                 // How many errors did we find?
                 if (settings.options.semanticallyStrict && errorsFound.length === 1) {
@@ -477,7 +477,7 @@
                     ( settings.options.prependExistingHelpBlock ? $helpBlock.data("original-contents") : "" ));
                 }
               } else {
-                $controlGroup.removeClass("warning error success");
+                $controlGroup.removeClass("warning has-error success");
                 if (value.length > 0) {
                   $controlGroup.addClass("success");
                 }
