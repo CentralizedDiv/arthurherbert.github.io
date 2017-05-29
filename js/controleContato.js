@@ -145,7 +145,7 @@ $(document).ready(function(){
 		return sortedDataSet;
 	};   
 
-	if(location.pathname.split('/').slice(-1)[0] === 'controleContato.html'){
+	if(location.pathname.split('/').slice(-1)[0] === 'controleContato.php'){
 		/*Start with the active table populated*/
 		var activeTabbed = ($.makeArray($('.tab-content > .active')))[0];
 		if(activeTabbed)
