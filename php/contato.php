@@ -4,13 +4,14 @@ $ticket = new ContatoTicket();
 $contato = new Contato($ticket);
 //Verify if ajax pass the method and choose what parameter pass to the query
 
-if(isset($_POST['email']) && isset($_POST['assunto'])) {
-    if(empty($_POST['name']) 
-        || empty($_POST['email'])       
-        || empty($_POST['assunto'])     
-        || empty($_POST['mensagem'])
-        || empty($_POST['phone']) 
-        || !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) {
+if(isset($_POST['dados'])){
+    $dados = json_decode($_POST['dados']);
+    if(empty($dados->name) 
+        || empty($dados->email)       
+        || empty($dados->assunto)     
+        || empty($dados->mensagem)
+        || empty($dados->phone) 
+        || !filter_var($dados->email,FILTER_VALIDATE_EMAIL)) {
                 echo "Existem campos em branco!";
                 return false;
     }
@@ -21,11 +22,11 @@ if(isset($_POST['email']) && isset($_POST['assunto'])) {
     }*/
     else {
         $rowSave = array(
-            "NOMECLIE"  =>  $_POST['name'],
-            "EMAIL"     =>  $_POST['email'],
-            "ASSUNTO"   =>  $_POST['assunto'],  
-            "MENSAGEM"  =>  $_POST['mensagem'],
-            "TELEFONE"  =>  $_POST['phone']
+            "NOMECLIE"  =>  $dados->name,
+            "EMAIL"     =>  $dados->email,
+            "ASSUNTO"   =>  $dados->assunto,  
+            "MENSAGEM"  =>  $dados->mensagem,
+            "TELEFONE"  =>  $dados->phone
         );
         $contato->saveContato($rowSave);
     }
@@ -36,10 +37,10 @@ if(isset($_POST['email']) && isset($_POST['assunto'])) {
 else if(isset($_POST['method']) && !empty($_POST['method'])) {
     $method = $_POST['method'];
     switch($method) {
-        case 'fornecedor' : $contato->getContatoFornecedor();break;
-        case 'trabalho'   : $contato->getContatoTrabalho();break;
-        case 'sugrec'     : $contato->getContatoSugRec();break;
-        case 'outros'     : $contato->getContatoOutros();break;
+        case 'fornecedor'     : $contato->getContatoFornecedor();break;
+        case 'trabalheConosco': $contato->getContatoTrabalho();break;
+        case 'sugRec'         : $contato->getContatoSugRec();break;
+        case 'outros'         : $contato->getContatoOutros();break;
     }
 }
 class Contato{

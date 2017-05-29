@@ -13,6 +13,19 @@ html, body {
 h1.controleContato{
 	color:#130d06;
 }
+a.container-action, a.container-action:hover{
+  text-decoration: none; 
+  color:black; 
+  cursor: pointer;
+  margin-left:-90%;
+  margin-top:50%;
+  font-size: 15px;
+  transition: margin-left 0.5s ease 0s;
+  -webkit-transition: margin-left 0.5s ease 0s;
+  -moz-transition: margin-left 0.5s ease 0s;
+  -o-transition: margin-left 0.5s ease 0s;  
+}
+
 /*Tabs*/
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
@@ -62,3 +75,64 @@ table, td, tr, th, tbody, thead{
 	color:#130d06;
 }
 tr:nth-child(even) {background-color: #fefefe}
+tbody > tr{
+  cursor: pointer;
+}
+/*Swipe*/
+label{
+  color:#ddd;
+  font-family: segan;
+  text-align:left;
+  font-size:12px;
+ }
+ @media(min-width: 768px){
+    label{
+      padding-right: 120px;
+    }
+ }
+ .panel-body > label{
+  color: #130d06;
+  font-size:16px;
+ }
+#swipe{
+  margin-left: 2000px;
+  position: fixed;
+  margin-left:2000px;
+  width:70%;
+  margin-right:0;
+  transition: margin-left 0.5s ease 0s;
+  -webkit-transition: margin-left 0.5s ease 0s;
+  -moz-transition: margin-left 0.5s ease 0s;
+  -o-transition: margin-left 0.5s ease 0s;  
+  background-color: #fdfdfd;
+  padding: 20px;
+  border: 1px solid #130d06;
+  border-radius:5px;
+  color: #fff;
+}
+.swipe-action, a.swipe-action:hover{
+  text-decoration: none; 
+  color:#130d06; 
+  cursor: pointer;
+  font-size: 15px;
+}
+.panel{
+  margin-top: 20px;
+}
+.panel-swipe {
+  border: 1px solid #130d06;
+}
+.panel-swipe > .panel-heading {
+  color: white;
+  background-color: #130d06;
+}
+.panel-swipe > .panel-body {
+  color:#130d06;
+}
+.panel-swipe > .panel-footer {
+  color: white;
+  background-color: #130d06;
+}
+input[readonly]{
+  background-color: grey;
+}
