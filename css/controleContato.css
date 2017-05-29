@@ -79,6 +79,18 @@ tbody > tr{
   cursor: pointer;
 }
 /*Swipe*/
+.swipe-pointer{
+    font-size: 20px;
+    color:white;
+    text-shadow: -2px 0 black, 2px 0 white;
+    top:-5000px;
+    display:inline-block;
+    margin-left:-93px;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;  
+}
 label{
   color:#ddd;
   font-family: segan;
@@ -90,15 +102,49 @@ label{
       padding-right: 120px;
     }
  }
- .panel-body > label{
+ .controls > label{
   color: #130d06;
   font-size:16px;
+ }
+ 
+ @media(max-height: 640px){
+    .panel-heading > label, .panel-footer > label{
+      display: none;
+    }  
+    .controls > label{
+      font-size:12px;
+    }
+    .controls > input{
+      height: 25px;
+      font-size: 12px;
+    }
+    .controls > textarea{
+      height: 50px;
+       font-size: 12px;
+    }
+ }
+ @media(max-height: 480px){
+    .panel-heading > label, .panel-footer > label{
+      display: none;
+    }  
+    .controls > label{
+      font-size:10px;
+    }
+    .controls > input{
+      height: 20px;
+      font-size: 10px;
+    }
+    .controls > textarea{
+      height: 40px;
+       font-size: 10px;
+    }
  }
 #swipe{
   margin-left: 2000px;
   position: fixed;
-  margin-left:2000px;
   width:70%;
+  display:"";
+  height: 100%;
   margin-right:0;
   transition: margin-left 0.5s ease 0s;
   -webkit-transition: margin-left 0.5s ease 0s;

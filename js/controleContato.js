@@ -150,25 +150,30 @@ $(document).ready(function(){
 		var activeTabbed = ($.makeArray($('.tab-content > .active')))[0];
 		if(activeTabbed)
 			getDataSet(activeTabbed.id);
-		$(document).on('click touch', 'tr', function(){
+		$(document).on('click touch', 'tbody > tr', function(){
 				var currentRow = $.makeArray($(this).find('td'));
-				openSwipe(currentRow);
+				var positionPointer   = $(this).offset();
+				openSwipe(currentRow, positionPointer);
 		});
 		$('#swipe > a').on('click touch', function(){
 				var swipe = $('#swipe');
-				closeSwipe(swipe);
+				var positionPointer   = $(this).offset();
+				closeSwipe(swipe, positionPointer);
 		});
 	}
 
-	function openSwipe(row){
+	function openSwipe(row, positionPointer){
 		var swipe = $('#swipe');
 		var swipeAction = $('#swipe > a');
+		var swipePointer = $('#swipe > .swipe-pointer');
+		var positionPointer = positionPointer.top-15;
 		//mobile
 		if(jQuery(window).width() < 786){
 			swipe.stop().css({
 				"margin-left":"0",
 				width:"100%",
 				heigth:"100%",
+				display:"",
 				top:0
 			});
 			swipeAction.stop().css({
@@ -182,13 +187,16 @@ $(document).ready(function(){
 		//desktop
 		else{
 			swipe.stop().css({
-				"margin-left":"30%",
+				"margin-left":"29.9%",
 				heigth:"100%",
-				"padding-bottom":'1000px',
+				display:"",
 				top:0
 			});
 			swipeAction.stop().css({
 				"margin-left":"0",
+			});
+			swipePointer.stop().css({
+				"top":positionPointer	
 			});
 			swipe.removeClass('closed');	
 			swipe.addClass('open');
@@ -198,11 +206,14 @@ $(document).ready(function(){
 	};
 
 	function closeSwipe(swipe){
+		var swipePointer = $('#swipe > .swipe-pointer');
 		swipe.stop().css({
 			"margin-left":"100%",
-			width:"100%",
-			heigth:"100%",
+			width:"70%",
 			top:0
+		});
+		swipePointer.stop().css({
+			"top":"-5000px"	
 		});
 		swipe.removeClass('open');	
 		swipe.addClass('closed');
@@ -229,7 +240,7 @@ $(document).ready(function(){
 		//filds Header and Footer
 		var fieldsSHAndF = $.makeArray(swipe.find('.panel > .panel-heading > label, .panel > .panel-footer > label'));
 		//filds Body
-		var fieldsSB     = $.makeArray(swipe.find('.panel > .panel-body > label'));
+		var fieldsSB     = $.makeArray(swipe.find('.control-group > .controls > label'));
 		
 		fieldsSHAndF.forEach(function fillSwipesHeaderAndFooter(field){
 			row.forEach(function loopThroughCurrentRow(value){
@@ -248,7 +259,7 @@ $(document).ready(function(){
 					var type = field.attributes.type.value;
 					var valueField = value.textContent;
 					if(!document.getElementById('field'+value.id)){
-						$('<'+type+'></'+type+'>').val(valueField).insertAfter('label[name='+field.attributes.name.value+']').attr('id', 'currentField');
+						$('<'+type+'></'+type+'>').val(valueField).insertAfter('.controls > label[name='+field.attributes.name.value+']').attr('id', 'currentField').attr('class', 'form-control');
 						if($('#currentField').val() !== "")
 							$('#currentField').prop('readonly', true)	
 					}else{
