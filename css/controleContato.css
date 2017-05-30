@@ -91,6 +91,9 @@ tbody > tr{
     -moz-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;  
 }
+textarea{
+  resize: vertical
+}
 label{
   color:#ddd;
   font-family: segan;
@@ -106,41 +109,13 @@ label{
   color: #130d06;
   font-size:16px;
  }
- 
- @media(max-height: 640px){
-    .panel-heading > label, .panel-footer > label{
-      display: none;
-    }  
-    .controls > label{
-      font-size:12px;
-    }
-    .controls > input{
-      height: 25px;
-      font-size: 12px;
-    }
-    .controls > textarea{
-      height: 50px;
-       font-size: 12px;
-    }
- }
- @media(max-height: 480px){
-    .panel-heading > label, .panel-footer > label{
-      display: none;
-    }  
-    .controls > label{
-      font-size:10px;
-    }
-    .controls > input{
-      height: 20px;
-      font-size: 10px;
-    }
-    .controls > textarea{
-      height: 40px;
-       font-size: 10px;
-    }
- }
+ ::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent;  
+}
 #swipe{
   margin-left: 2000px;
+  overflow-y: scroll;
   position: fixed;
   width:70%;
   display:"";
