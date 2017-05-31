@@ -23,11 +23,12 @@
 }
 label{
 	padding-top: 20px;
-	display: block;
+	overflow: hidden;
 	font-family: segan;
 	font-size: 30px;
 	margin-left: -30px;
 	margin-bottom: -35px;
+	margin-top: 40px;
 	position: relative;
 	left:20%;
 	color: #a5a5a5;
@@ -36,11 +37,11 @@ label{
 }
 
 span{
-	font-size: 40px;
+	font-size: 30px;
 	color:#130d06;
 	position: relative;
-	margin-left:-25px;
-	margin-top: -40px;
+	margin-left:-5px;
+	margin-top: -0px;
 	padding-bottom: 10px;
 	display: inline-block;
 }
@@ -56,17 +57,25 @@ input{
 	border-bottom: 1px solid #ddd;
 	background-color: transparent;
 	position: relative;
+	display: block;
 	left:10%;
 	width: 80%;
 	font-size: 25px;
 }
 input[type="submit"]{
-	margin-left: 13%;
+	margin-left: 12%;
+	border-bottom: 2px solid #ddd; 
 	width: 50%
 }
 input:focus{
 	outline:none;
 	border-bottom: 2px solid #130d06; 
+	-moz-border-radius: 0.2s;
+	-webkit-border-radius: 0;
+	transition: border-bottom 0.5s ease-out 0s;
+    -webkit-transition: border-bottom 0.5s ease-out 0s;
+    -moz-transition: border-bottom 0.5s ease-out 0s;
+    -o-transition: border-bottom 0.5s ease-out 0s;
 }
 .controls label {
   transform: scale(1);
