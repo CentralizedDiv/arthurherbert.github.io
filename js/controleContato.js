@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	if(location.pathname.split('/').slice(-1)[0] === 'login.php'){
+	if(location.pathname.split('/').slice(-1)[0] === 'login.html'){
 		$('input').focus(function(){
 			var label = $(this).prev()	
 			label.stop().css({
