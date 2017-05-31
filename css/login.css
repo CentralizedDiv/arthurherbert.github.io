@@ -1,0 +1,74 @@
+.loginContentM{
+	width: 100%;
+	height: 100%;
+	font-family:segan;
+	background-color: white;
+	position: fixed;
+	margin-left: 15px;
+	border:2px solid #130d06; 
+	border-radius:0;	
+	padding-top: 35%;
+	padding-left: 50px;
+}
+.loginContent{
+	width: 500px;
+	font-family:segan;
+	background-color: white;
+	position: absolute;
+	top:25%;
+	left: 30%;
+	padding:50px;
+	border:2px solid #130d06; 
+	border-radius:20px;
+}
+label{
+	padding-top: 20px;
+	display: block;
+	font-family: segan;
+	font-size: 30px;
+	margin-left: -30px;
+	margin-bottom: -35px;
+	position: relative;
+	left:20%;
+	color: #a5a5a5;
+	font-weight: 100;
+    
+}
+
+span{
+	font-size: 40px;
+	color:#130d06;
+	position: relative;
+	margin-left:-25px;
+	margin-top: -40px;
+	padding-bottom: 10px;
+	display: inline-block;
+}
+.btn{
+	width: 30%;
+	padding: 10px;
+	margin-top: 45px;
+	margin-bottom: 00px;
+}
+
+input{
+	border: 0px;
+	border-bottom: 1px solid #ddd;
+	background-color: transparent;
+	position: relative;
+	left:10%;
+	width: 80%;
+	font-size: 25px;
+}
+input[type="submit"]{
+	margin-left: 13%;
+	width: 50%
+}
+input:focus{
+	outline:none;
+	border-bottom: 2px solid #130d06; 
+}
+.controls label {
+  transform: scale(1);
+  transition: 0.3s  transform ease-in, margin-bottom 0.5s ease, margin-left 1s ease;
+}
