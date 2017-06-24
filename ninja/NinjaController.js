@@ -3,6 +3,9 @@ angular.module('Ninjas', [])
 
 function NinjaController(widget, $http) {
     widget.itens = getDataSet();
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
     function getDataSet() {
          var REQ = { 
            url:   'php/Ninja.php',
@@ -33,15 +36,15 @@ function NinjaController(widget, $http) {
         widget.itens = data;
     }
 
-    widget.adicionaItem = function () {
-        widget.itens.push({produto: widget.item.produto,
-                           quantidade: widget.item.quantidade,
-                           comprado: false});
-        widget.item.produto = widget.item.quantidade = '';
-    };
-    widget.removeItem = function () {
-        widget.itens.pop();
-    };
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+    
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
 };
 
 NinjaController.$inject = ['$scope', '$http'];
