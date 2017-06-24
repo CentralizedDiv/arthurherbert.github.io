@@ -1,4 +1,25 @@
 $(document).ready(function(){
+	if(location.pathname.split('/').slice(-1)[0] === 'login.php'){
+		$('input').focus(function(){
+			var label = $(this).prev()	
+			label.stop().css({
+				"font-size":"25px",
+				"margin-bottom":"5px",
+				"transform": "scale(0.7)",
+			});
+		});	
+		$('input').focusout(function(){
+			var label = $(this).prev()	
+			if((this).value === ""){
+				label.stop().css({
+					"font-size":"30px",
+					"margin-bottom":"-35px",
+					"transform": "scale(1)",
+					});
+			}
+		});	
+	}
+
 /*Function to call ajax for contato.html's form*/
 	if(location.pathname.split('/').slice(-1)[0] === 'contato.html'){
 		$(".form-horizontal").find("input,textarea,select").jqBootstrapValidation(
