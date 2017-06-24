@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Ninja</title>
+        <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+        <script src="app.js"></script>
+        <script src="NinjaController.js"></script>
+    </head>
+    <body>
+        <div ng-app = "Ninjas" ng-controller="NinjaController">
+            <table>
+              <thead>
+                <tr>
+                  <th>Assunto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in itens">
+                  <td>{{ item.ASSUNTO }}</td>
+             
+                </tr>
+              </tbody>
+            </table>
+            <form class="form-inline" name="formItem">
+              <input type="text" ng-model="item.ASSUNTO">
+              <button ng-click="adicionaItem()">adicionar ítem</button>
+              <button ng-click="removeItem()">reve ítem</button>
+            </form>
+        </div>
+    </body>
+</html>
