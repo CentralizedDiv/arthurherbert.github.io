@@ -2,10 +2,23 @@ angular.module('Ninjas', [])
 .controller('NinjaController', NinjaController);
 
 function NinjaController(widget, $http) {
+    widget.FBLogin = function() {
+      FB.login(function(response){
+        if(response.authResponse) {
+          FB.api('/me', function(response) {
+            console.log('DEU BOM DEMAIS');
+            console.log(response);
+            var acessToken = FB.getAuthResponse();
+            console.log(acessToken);
+          });
+        }
+        else {
+          console.log('DEU RUIM');
+        }
+
+      });
+    };
     widget.itens = getDataSet();
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
     function getDataSet() {
          var REQ = { 
            url:   'php/Ninja.php',
@@ -13,15 +26,7 @@ function NinjaController(widget, $http) {
            data:  {}
        };
         requisicaoAjax(REQ);       
-        
-
     };
-
-    function setItens(data) {
-        var data = [{produto: 'Leite', quantidade: 2, comprado: false},
-        {produto: 'Cerveja', quantidade: 12, comprado: false}];
-        return data;
-    }
 
     function requisicaoAjax(REQ) {
         $http(REQ).success(function(data){
@@ -34,17 +39,15 @@ function NinjaController(widget, $http) {
 
     function setItens (data) {
         widget.itens = data;
-    }
+    };
 
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-    
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
+    widget.adicionaItem = function () {
+        widget.itens.push({ASSUNTO: widget.item.assunto});
+    };
+    widget.removeItem = function () {
+        widget.itens.pop();
+    };
+
 };
 
 NinjaController.$inject = ['$scope', '$http'];
