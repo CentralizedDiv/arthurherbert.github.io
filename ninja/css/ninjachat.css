@@ -21,3 +21,14 @@
 	padding-bottom: 1000px;
 	background-color: #211f1f;
 }
+.loginImage{
+	margin-left: 20%;
+	margin-top: 20%;
+}
+input{
+	padding: 10px;
+	margin:10px;
+	border:1px solid #ddd;
+	width: 70%;
+	margin-left: 15%;
+}
