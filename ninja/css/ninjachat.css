@@ -23,7 +23,7 @@
 }
 .loginImage{
 	margin-left: 20%;
-	margin-top: 20%;
+	margin-top: 10;
 }
 input{
 	font-size:50px;
@@ -65,6 +65,7 @@ h2 span {
 	font-size: 35px;
 	width: 80%;
 	margin-top: 70px;
+	margin-bottom: 120px;
 }
 button>p{
 	font-size: 41px;
@@ -83,4 +84,11 @@ hr{
 }
 .signup{
 	margin-left: 20%;
+}
+.page{
+	height: 100%;
+	position: fixed;
+}
+.signupdiv{
+	margin-bottom: 0;
 }
