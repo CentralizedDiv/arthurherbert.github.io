@@ -12,31 +12,49 @@
       <div class="page">
         <div id="fb-root"></div>
         <div ng-app = "Ninjas" ng-controller="NinjaController">
-            <div class="container-fluid ">
+            <div class="container">
               <div class = "row">
                 <div class="col-md-12 loginImage visible-xs">
-                <img src="imagens/Login.png" width="75%" height="350px">
+                <img src="imagens/Login.png" width="82%" height="380px">
                 </div>
                 <div class="col-md-12 loginContentM visible-xs">
                     <form id="formContato" class="form-horizontal" method="post">
                       <div class="control-group form-group">
                         <div class="controls">
-                          <input class="inputLogin" type="text" name="usuario" maxlength="50" />
+                          <input class="inputLogin" type="text" name="usuario" maxlength="50" placeholder="Telefone, email ou nome de usuário" />
                         </div>
                       </div>
                       <div class="control-group form-group">
                         <div class="controls">
-                          <input class="inputLogin"  type="password" name="senha" maxlength="50" />
+                          <input class="inputLogin"  type="password" name="senha" maxlength="50" placeholder="Senha"/>
                         </div>
                       </div>
                       <div class="form-actions form-group">
                         <input  type="submit" value="Entrar" class="btn ">
                       </div>
-                  </form>
+                  </form>                  
+                </div>
+                <div class="col-md-12 forgotLogin visible-xs">
+                   <p>Esqueceu seu login ou senha?<strong> Nos te ajudamos</strong></p>
+                </div>
+                <div class="col-md-12 forgotLogin visible-xs">
+                   <h2><span>OU</span></h2>
+                </div>
+                <div class="fb-login-button col-md-12 visible-xs">
+                  <button class="fbLogin" ng-click="FBLogin()">
+                    <span>
+                      <img class="fbImg" src="https://www.facebook.com/rsrc.php/v3/yO/r/lF-L3veiXx9.png" width="70px">
+                    </span>
+                    <p>Logar com o Facebook</p>
+                  </button>
+                </div>
+                <div class="col-md-12 visible-xs">
+                  <hr>
+                  <p class="signup">Nao tem uma conta? <strong>Cadastre-se.</strong></p>
                 </div>
               </div>
             </div>
-            <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+            
         </div>
       </div>
     </body>
