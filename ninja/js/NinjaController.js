@@ -16,12 +16,15 @@ function NinjaController(widget, $http) {
           console.log('DEU RUIM');
         }
 
-      });
+      }, {scope: 'public_profile,email,user_friends'});
     };
     widget.testPublication = function() {
       
         // Note: The call will only work if you accept the permission request
-      FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+      FB.api('/me/friends?limit=<?= $iLimit ?>', function(response) {
+            var friend_data = response.data;
+            console.log(friend_data);
+        });
     };  
     widget.itens = getDataSet();
     function getDataSet() {
