@@ -21,7 +21,7 @@ function NinjaController(widget, $http) {
     widget.testPublication = function() {
       
         // Note: The call will only work if you accept the permission request
-      FB.api('/me/friends?limit=<?= $iLimit ?>', function(response) {
+      FB.api('/me/friends', function(response) {
             var friend_data = response.data;
             console.log(friend_data);
         });
