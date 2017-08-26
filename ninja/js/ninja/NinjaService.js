@@ -1,4 +1,4 @@
-angular.module('Ninjas', [])  
+angular.module('Ninja', [])  
 .service('NinjaService', NinjaService);
 
 function NinjaService($http) {

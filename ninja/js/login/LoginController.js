@@ -1,9 +1,12 @@
-function NinjaController(widget, NinjaService) {
+angular.module('Login', [])  
+.controller('LoginController', LoginController);
+
+function LoginController(widget, LoginService) {
 
     widget.fotoPerfil = getImagemPerfil();
 
     function getImagemPerfil() {
-      return NinjaService.getReqBackend('php/ninja.php', {function: 'getFotoPerfil', php: 'ninja'}).then(function successCallback(response) {
+      return LoginService.getReqBackend('php/ninja.php', {function: 'getFotoPerfil', php: 'ninja'}).then(function successCallback(response) {
         return response.data.foto;
       }, function errorCallback(response) {
           return alert("Erro:" + response);
@@ -64,11 +67,11 @@ function NinjaController(widget, NinjaService) {
     };
     
     widget.getAmigosBackend = function() {
-      NinjaService.getReqBackend("php/facebook.php", {function: 'getEmail', php: 'facebook'});
+      LoginService.getReqBackend("php/facebook.php", {function: 'getEmail', php: 'facebook'});
     }
 
     function verificaCadastro(id) {
-      return NinjaService.getReqBackend('php/ninja.php', {function: 'verificaCadastro', id: id, php: 'ninja'});
+      return LoginService.getReqBackend('php/ninja.php', {function: 'verificaCadastro', id: id, php: 'ninja'});
     };
 
 
@@ -78,4 +81,4 @@ function NinjaController(widget, NinjaService) {
 
 };
 
-NinjaController.$inject = ['$scope', 'NinjaService'];
+LoginController.$inject = ['$scope', 'LoginService'];
