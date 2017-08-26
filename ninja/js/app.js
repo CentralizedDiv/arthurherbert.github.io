@@ -1,4 +1,5 @@
-var Ninjas = angular.module('Ninjas',[]);
+var Login = angular.module('Login', []);
+var Ninja = angular.module('Ninja', []);
 
 window.fbAsyncInit = function() {
   FB.init({
