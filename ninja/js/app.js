@@ -1,4 +1,4 @@
-var Ninjas = angular.module('Ninjas',["ngRoute"]);
+var Ninjas = angular.module('Ninjas',[]);
 
 window.fbAsyncInit = function() {
   FB.init({

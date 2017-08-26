@@ -1,3 +1,7 @@
+<?php
+include('php/redirectLogin.php'); // Inclui o arquivo com o sistema de segurança
+verificaLogin();
+echo'
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +13,9 @@
     <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="imagens/icons/ninjaIcon.png" >
-    <script src="https://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/NinjaService.js"></script>
-    <script src="js/NinjaController.js"></script>
     <title>Ninja Chat</title>
  </head>
-<body ng-app = "Ninjas" ng-controller="NinjaController">
+<body>
   <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -32,15 +32,13 @@
             </div>
         </div>
     </div>
-     <div >
     <div class="row">
         <div class="col-12">
             <div class="content">
-                <img id="fotoPerfil" class="visible-xs" height="300px" width="300px" ng-src="{{fotoPerfil}}"/>
             </div>
         </div>
     </div>
   </div>
 </body>
-</html>
+</html>';
     
