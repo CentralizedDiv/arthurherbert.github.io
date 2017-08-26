@@ -21,12 +21,12 @@ function NinjaController(widget, $http) {
     widget.testPublication = function() {
       
         // Note: The call will only work if you accept the permission request
-      FB.api('/me/friends?limit=<?= $iLimit ?>', function(response) {
+      FB.api('/me/friends', function(response) {
             var friend_data = response.data;
             console.log(friend_data);
         });
     };  
-    widget.itens = getDataSet();
+    
     function getDataSet() {
          var REQ = { 
            url:   'php/Ninja.php',
@@ -43,17 +43,6 @@ function NinjaController(widget, $http) {
         .error(function(err){
           console.log('Erro: ', err);
         });
-    };
-
-    function setItens (data) {
-        widget.itens = data;
-    };
-
-    widget.adicionaItem = function () {
-        widget.itens.push({ASSUNTO: widget.item.assunto});
-    };
-    widget.removeItem = function () {
-        widget.itens.pop();
     };
 
 };
