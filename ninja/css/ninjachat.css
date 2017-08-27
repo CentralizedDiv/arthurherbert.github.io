@@ -111,3 +111,100 @@ hr{
 	width: 100%;
 	bottom: 0;
 }
+/*Swipe*/
+.swipe-pointer{
+    font-size: 20px;
+    color:white;
+    text-shadow: -2px 0 black, 2px 0 white;
+    top:-5000px;
+    display:inline-block;
+    margin-left:-93px;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;  
+}
+textarea{
+  resize: vertical
+}
+label{
+  color:#ddd;
+  font-family: segan;
+  text-align:left;
+  font-size:12px;
+ }
+ @media(min-width: 768px){
+    label{
+      padding-right: 120px;
+    }
+ }
+ .controls > label{
+  color: #130d06;
+  font-size:16px;
+ }
+ ::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent;  
+}
+#swipe{
+  margin-left: 2000px;
+  overflow-y: scroll;
+  position: fixed;
+  width:70%;
+  display:"";
+  height: 100%;
+  margin-right:0;
+  transition: margin-left 0.5s ease 0s;
+  -webkit-transition: margin-left 0.5s ease 0s;
+  -moz-transition: margin-left 0.5s ease 0s;
+  -o-transition: margin-left 0.5s ease 0s;  
+  background-color: #fdfdfd;
+  padding: 20px;
+  border: 1px solid #130d06;
+  border-radius:5px;
+  background-color: #211f1f;
+  color: #fff;
+}
+.swipe-action, a.swipe-action:hover{
+  text-decoration: none; 
+  color:#130d06; 
+  cursor: pointer;
+  font-size: 15px;
+}
+.panel{
+  margin-top: 20px;
+}
+.panel-swipe {
+  border: 1px solid #130d06;
+}
+.panel-swipe > .panel-heading {
+  color: white;
+  background-color: #130d06;
+}
+.panel-swipe > .panel-body {
+  color:#130d06;
+}
+.panel-swipe > .panel-footer {
+  color: white;
+  background-color: #130d06;
+}
+
+input[readonly]{
+  background-color: grey;
+}
+.redondo {
+   border-radius: 50%;
+}
+
+.fotoPerfil {
+   margin-top:15%;
+   width: 30%;
+   height: 30%;
+}
+
+.inline {
+	display: inline;
+}
+.nomeUser {
+	font: 10px;
+}
