@@ -43,10 +43,11 @@ class Ninja {
 		}
 	}
 
-	public function getFotoPerfil($id) {
+	public function getInfoUsuario($id) {
 		$usuario = $this->consultaCadastro($id);
 		$object = new stdClass();
 		$object->foto = $usuario['FOTOUSUARIO'];
+		$object->nome = $usuario['NOMEUSUARIO'];
 		echo json_encode($object);
 	}
 
