@@ -1,9 +1,10 @@
 <?php 
 require_once("facebook.php");
 $json = file_get_contents('php://input');
-$ninja = new Ninja($json);
+$ninja = new ninja($json);
 
-class Ninja {
+
+class ninja {
 	protected $link;
 	protected $json;
 
@@ -12,8 +13,14 @@ class Ninja {
         $this->json = $json;
         $data = (array) json_decode($json);
 		$id = isset($data['id']) ? $data['id'] : $_COOKIE['ninja_id'];;
-		if($data['php'] == 'ninja') $this->$data['function']($id);
+		if($data['php'] == 'ninja') {
+			$this->$data['function']($id);
+		}
     }
+
+	public function verificaLogin() {	
+		return isset($_COOKIE['ninja_accessToken']);
+	}
 
     /* Verifica se o usuario já foi cadastrado
     	na base do ninja e redireciona para tela adequada
