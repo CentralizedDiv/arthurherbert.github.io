@@ -3,8 +3,7 @@
 	background-color: #211f1f;
     border-bottom: 1px solid #000;
 }
-.navbar-inverse .navbar-nav > .active>a{
-	background-color: #211f1f;
+.navbar-inverse .navbar-nav > .active >a{
 	color:#fff;
 }
 .nav.navbar-nav {
@@ -201,10 +200,13 @@ input[readonly]{
    width: 30%;
    height: 30%;
 }
-
-.inline {
-	display: inline;
+.side-nav{
+  background-color: #130d06 !important;
+  border:1px solid black;
+  z-index: 10000 !important;
+  position: relative;
 }
-.nomeUser {
-	font: 10px;
+.test{
+  padding-top: 1000px;
+  background-color: #130d06 !important;
 }
