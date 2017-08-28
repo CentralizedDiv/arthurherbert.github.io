@@ -2,13 +2,13 @@ angular.module('Login', [])
 .service('LoginService', LoginService);
 
 function LoginService($http) {
-	 this.getReqBackend = function(url, jsonData) {
-       /* var REQ = { 
-         url:   url,
-         type:  type,
-         data:  {data: jsonData}
-      };
-      return requisicaoAjax(REQ);*/
+    this.setCookieLogin = function(id, name, acessToken) {
+      return requisicao("php/redirectLogin.php", {function: 'setCookieLogin', php: 'redirectLogin', idFB: id, token: acessToken, nome: name}).then(function(success) {
+          return requisicao("php/ninja.php", {function: 'verificaCadastro', php: 'ninja', id: id});
+      });
+    }
+
+   this.getReqBackend = function(url, jsonData) {
       return requisicao(url, jsonData);
     };
 
