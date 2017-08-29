@@ -210,3 +210,25 @@ input[readonly]{
   padding-top: 1000px;
   background-color: #130d06 !important;
 }
+.feed {
+  position: absolute;
+  background-color: #130d06;
+  margin-top:15%;
+  width:  100%;
+  height: 100%;
+}
+.row {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.pergunta {
+  font color: #000000;
+  font-size: 16px;
+  text-align: left;
+}
+
+.resposta {
+  font color: #000000;
+  font-size: 14px;
+  text-align: right;
+}
