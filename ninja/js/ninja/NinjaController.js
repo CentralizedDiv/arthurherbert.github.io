@@ -9,6 +9,9 @@ $(document).ready(function(){
     }
   );
 	$('ul li a').click(function(){ $('.active').removeClass("active"); $(this).addClass("active"); });
+	$('.datepicker').datepicker({
+		weekStart:1
+	});
 });
 angular.module('Ninja', [])  
 .controller('NinjaController', NinjaController);

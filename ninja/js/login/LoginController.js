@@ -52,7 +52,7 @@ function LoginController(widget, LoginService) {
       document.cookie = 'ninja_accessToken='+acessToken;
       document.cookie = 'ninja_name='+name;
       verificaCadastro(id).then(function successCallback(response) {
-        if(response.data.cadastrado || response.data.cadastroRealizado) window.location.href = 'index.html';
+        if(response.data.cadastrado || response.data.cadastroRealizado) window.location.href = 'signup.html';
         if(response.data.erroCadastro) alert("Ocorreu um erro ao realizar o login com facebook.");
       }, function errorCallback(response) {
           return alert("Erro:" + response);

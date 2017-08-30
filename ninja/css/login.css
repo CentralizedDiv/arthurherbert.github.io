@@ -1,7 +1,19 @@
 .header-login{
 	background-color: #130d06 !important;
 }
-
 .btn-login{
 	color: #130d06 !important;
+}
+
+ 
+.img-signup{
+	width:70px !important;
+	position: relative;
+	z-index: 1000 !important;
+	margin: -15% 0px 0px 40% !important; 
+	border: 2px solid white;
+}
+.floating{
+	position: fixed;
+	bottom: 0;
 }
