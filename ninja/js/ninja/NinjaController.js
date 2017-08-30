@@ -27,7 +27,12 @@ function NinjaController(widget, NinjaService) {
       });
     };
 
+    widget.getFeed = function() {
+    	return [{"pergunta": "E ai piranha quem é que te come?", "resposta": "Hur dur"}, {"pergunta": "Vamo pro cartorio?", "resposta": "Sim"}];
+    };
+
 	widget.data       = widget.getData();
+	widget.feed  	  = widget.getFeed();
 
     widget.openSwipe = function(){
 		var swipe = $('#swipe');

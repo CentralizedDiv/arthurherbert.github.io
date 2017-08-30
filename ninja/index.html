@@ -23,31 +23,35 @@
    </head>
    <body ng-app = "Ninja" ng-controller="NinjaController">
 
-                  <div class="test"></div>
-
-            <ul id="slide-out" class="side-nav">
-               <li>
-                  <div class="user-view">
-                     <div class="background">
-                        <img ng-src="{{cover}}">
-                     </div>
-                     <a href="#!user"><img class="circle" ng-src="{{fotoPerfil}}"></a>
-                     <a href="#!name"><span class="white-text name"><strong>{{nome}}</strong></span></a>
+         <ul id="slide-out" class="side-nav">
+            <li>
+               <div class="user-view">
+                  <div class="background">
+                     <img ng-src="{{cover}}">
                   </div>
-               </li>
-               <li><a href="#!"><span class="white-text name"><strong>Link 1</strong></span></a>
-               <li><a href="#!"><span class="white-text name"><strong>Link 2</strong></span></a>
-            </ul>
-            <div class="navbar navbar-inverse navbar-fixed-top">
-               <div class="container-fluid">
-                  <ul class="nav navbar-nav">
-                     <li><a href="" data-activates="slide-out" class="button-collapse"><span class="glyphicon glyphicon-align-justify"></span></a></li>
-                     <li class="active"><a href="" ><span class="glyphicon glyphicon-home"></span></a></li>
-                     <li><a href=""><span class="glyphicon glyphicon-search"></span></a></li>
-                     <li><a href=""><span class="glyphicon glyphicon-user"></span></a></li>
-                     <li><a href=""><span class="glyphicon glyphicon-comment"></span></a></li>
-                  </ul>
+                  <a href="#!user"><img class="circle" ng-src="{{fotoPerfil}}"></a>
+                  <a href="#!name"><span class="white-text name"><strong>{{nome}}</strong></span></a>
                </div>
+            </li>
+            <li><a href="#!"><span class="white-text name"><strong>Link 1</strong></span></a>
+            <li><a href="#!"><span class="white-text name"><strong>Link 2</strong></span></a>
+         </ul>
+         <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+               <ul class="nav navbar-nav">
+                  <li><a href="" data-activates="slide-out" class="button-collapse"><span class="glyphicon glyphicon-align-justify"></span></a></li>
+                  <li class="active"><a href="" ><span class="glyphicon glyphicon-home"></span></a></li>
+                  <li><a href=""><span class="glyphicon glyphicon-search"></span></a></li>
+                  <li><a href=""><span class="glyphicon glyphicon-user"></span></a></li>
+                  <li><a href=""><span class="glyphicon glyphicon-comment"></span></a></li>
+               </ul>
             </div>
+         </div>
+         <div class="container-fluid feed">
+               <div class="row" ng-repeat="x in feed">
+                  <h5 class="pergunta">{{x.pergunta}}</h5>
+                  <h5 class="resposta">{{x.resposta}}</h5>
+               </div>
+         </div>
    </body>
 </html>
