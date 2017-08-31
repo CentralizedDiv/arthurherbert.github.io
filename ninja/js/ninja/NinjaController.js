@@ -1,19 +1,39 @@
 $(document).ready(function(){
-	$('.button-collapse').sideNav({
+    $('ul.tabs').tabs({
+      swipeable : true,
+      responsiveThreshold : 1920,
+      onShow: function(tab){
+      	cosnole.log(tab);
+      }
+    });
+    $('.button-collapse').sideNav({
       menuWidth: 300, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true, // Choose whether you can drag to open on touch screens,
       onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
       onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
-    }
-  );
-	$('ul li a').click(function(){ $('.active').removeClass("active"); $(this).addClass("active"); });
-	$('.datepicker').datepicker({
-		weekStart:1
+    });
+    var lastScrollTop = 0;
+	$(window).scroll(function(event){
+	   var st = $(this).scrollTop();
+	   if (st > lastScrollTop){
+	       $('#menus').css({
+	       		"margin-top":"-50px",
+	       		"transition": "margin-top 0.2s"
+	       });
+	   } else {
+	      $('#menus').css({
+	       		"margin-top":"0px",
+	       		"transition": "margin-top 0.3s"
+	       });
+	   }
+	   lastScrollTop = st;
 	});
+	console.log($('.indicator'));
+	
 });
-angular.module('Ninja', [])  
+angular.module('Ninja', ['ngTouch'])  
 .controller('NinjaController', NinjaController);
 
 function NinjaController(widget, NinjaService) {
@@ -26,6 +46,10 @@ function NinjaController(widget, NinjaService) {
           return alert("Erro:" + response);
       });
     };
+
+    widget.OpenSideNavThroughLeftSwipe = function(){
+    	$('.button-collapse').sideNav('show');	
+    }
 
     widget.getFeed = function() {
     	return [{"pergunta": "E ai piranha quem é que te come?", "resposta": "Hur dur"}, {"pergunta": "Vamo pro cartorio?", "resposta": "Sim"}];
