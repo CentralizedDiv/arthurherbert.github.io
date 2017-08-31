@@ -3,7 +3,7 @@
 	background-color: #211f1f;
     border-bottom: 1px solid #000;
 }
-.navbar-inverse .navbar-nav > .active >a{
+.active{
 	color:#fff;
 }
 .nav.navbar-nav {
@@ -231,4 +231,7 @@ input[readonly]{
   font color: #000000;
   font-size: 14px;
   text-align: right;
+}
+.carousel .carousel-item{
+  width:100%;
 }

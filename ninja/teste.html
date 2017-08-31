@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/ninjachat.css">
+      <link rel="stylesheet" href="css/materialize.css">
+      
+      <script src="js/lib/bootstrap.min.js"></script>
+
+      <title>Ninja Chat</title>
+   </head>
+<body>
+<div class="wrapper">
+  <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+  </ul>
+  <div id="test-swipe-1" class="col s12 blue" style="height:100vh;">Test 1</div>
+  <div id="test-swipe-2" class="col s12 red" style="height:100vh;">Test 2</div>
+  <div id="test-swipe-3" class="col s12 green" style="height:100vh;">Test 3</div>
+</div>
+<script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script><script src="//code.jquery.com/jquery-2.1.2.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script>    $( document ).ready(function() {
+$('#tabs-swipe-demo').tabs({ swipeable:true, onShow: function(tab) { console.log(tab); } });
+    });
+//# sourceURL=pen.js
+</script>
+<div class="hiddendiv common"></div></body>
