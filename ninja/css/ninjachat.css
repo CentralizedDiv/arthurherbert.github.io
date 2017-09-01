@@ -1,115 +1,4 @@
-/*MENU*/
-.navbar-inverse{
-	background-color: #211f1f;
-    border-bottom: 1px solid #000;
-}
-.active{
-	color:#fff;
-}
-.nav.navbar-nav {
-    width: 100%;
-}
-.nav.navbar-nav li {
-    float: left;
-    width: 20%;
-    padding-left: 20px;
-    font-size: 18px;
-}
-.content{
-	width: 100%;
-	padding-bottom: 1000px;
-	background-color: #211f1f;
-}
-@media(min-height: 550px){
-	img.imgLog{
-		width: 60%;
-		height: 250px;
-	}
-	.fbLogin{
-	}
-}
-.loginImage{
-	margin-left: 20%;
-	margin-top: 20;
-}
-input{
-	font-size:42px;
-	padding: 30px;
-	margin:25px;
-	border:1px solid #ddd;
-	width: 80%;
-	margin-left: 10%;
-}
-input[type="submit"]{
-	border:1px solid #000;
-	background-color: #211f1f;
-	color: white;
-}
-p{
-	margin-left: 10%;
-	font-size:41px;
-	margin-bottom: 120px;
-	margin-top: 70px;
-}
-h1 {
-    overflow: hidden;
-    text-align: center;
-}
-h1:before,
-h1:after {
-    background-color: #000;
-    content: "";
-    display: inline-block;
-    height: 1px;
-    position: relative;
-    vertical-align: middle;
-    width: 37%;
-}
-h1:before {
-    right: 0.5em;
-    margin-left: -50%;
-}
-h1:after {
-    left: 0.5em;
-    margin-right: -50%;
-}
-.fbLogin{
-	margin-left: 10%;
-	padding: 10px;
-	border:1px solid #4d74c6;
-	background-color: #4d74c6;
-	color:white;
-	font-size: 35px;
-	width: 80%;
-	margin-top: 70px;
-}
-button>p{
-	font-size: 41px;
-	margin-left:-100px;	
-	margin-top:15px;
-	margin-bottom: 0;
-}
-.fbImg{
-	float:left;
-	margin-left: 15%;
-}
-hr{
-	margin-top: 100px;
-	width: 110%;
-	margin-bottom: -35px;
-}
-.signup{
-	margin-left: 20%;
-}
-.page{
-	height: 100%;
-	position: fixed;
-}
-.signupdiv{
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-}
+
 /*Swipe*/
 .swipe-pointer{
     font-size: 20px;
@@ -202,9 +91,7 @@ input[readonly]{
 }
 .side-nav{
   background-color: #000 !important;
-  border:1px solid black;
   z-index: 10000 !important;
-  position: relative;
 }
 .test{
   padding-top: 1000px;
@@ -221,17 +108,13 @@ input[readonly]{
   border-bottom-style: solid;
   border-bottom-width: 2px;
 }
-.pergunta {
-  font color: #000000;
-  font-size: 16px;
-  text-align: left;
-}
-
-.resposta {
-  font color: #000000;
-  font-size: 14px;
-  text-align: right;
-}
 .carousel .carousel-item{
   width:100%;
+  height:1000px !important;
+}
+.carousel{
+  height: 1000px !important;
+}
+.active{
+  color:red;
 }
