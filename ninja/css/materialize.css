@@ -7514,7 +7514,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .drag-target {
   height: 100%;
-  width: 50px !important;
+  width: 10px !important;
   position: fixed;
   top: 0;
   z-index: 998;
