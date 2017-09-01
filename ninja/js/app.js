@@ -1,4 +1,5 @@
 var Login = angular.module('Login', []);
+var SignUp = angular.module('SignUp', []);
 var Ninja = angular.module('Ninja', ['ngTouch']);
 
 window.fbAsyncInit = function() {
