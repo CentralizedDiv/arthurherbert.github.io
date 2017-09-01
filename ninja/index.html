@@ -31,25 +31,29 @@
          <li><a href="#!"><span class="white-text name"><strong>Link 1</strong></span></a>
          <li><a href="#!"><span class="white-text name"><strong>Link 2</strong></span></a>
       </ul>
-      <div class="wrapper">
-         <nav id="menus" class="nav-extended navbar-fixed-top black">
-            <div class="nav-wrapper">
-               <a href="#!user" data-activates="slide-out" class="button-collapse"><img class="circle" ng-src="{{fotoPerfil}}" style=" width: 40px; margin: 10px 0px 10px -10px"></a>
-            </div>
-            <div class="nav-content">
-               <ul class="tabs tabs-transparent">
-                  <li class="tab col s3"><a ng-click="slideOnClick($event)" href="#test-swipe-1" style="text-decoration: none"><i class="material-icons">home</i></a></li>
-                  <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-2" style="text-decoration: none"><i class="material-icons">search</i></a></li>
-                  <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-3" style="text-decoration: none"><i class="material-icons" >person</i></a></li>
-                  <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-4" style="text-decoration: none"><i class="material-icons" >message</i></a></li>
-               </ul>
-            </div>
-         </nav>
-         <div id="test-swipe-1" class=" col s12 blue" style="height:100vh; width: 100%">Test 1</div>
-         <div id="test-swipe-2" class=" col s12 red" style="height:100vh; width: 100%">Test 2</div>
-         <div id="test-swipe-3" class=" col s12 green" style="height:100vh; width: 100%">Test 3</div>
-         <div id="test-swipe-4" class=" col s12 yellow" style="height:100vh; width: 100%">Test 4</div>
+      <div class="wrapper ">
+         <div class="navbar-fixed ">
+            <nav id="menus" class="nav-extended black">
+               <div class="nav-wrapper">
+                  <a href="#!user" data-activates="slide-out" class="button-collapse"><img class="circle" ng-src="{{fotoPerfil}}" style=" width: 40px; margin: 10px 0px 10px -10px"></a>
+               </div>
+               <div class="nav-content">
+                  <ul class="tabs tabs-transparent tabs-fixed-width">
+                     <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-1" style="text-decoration: none"><i class="material-icons">home</i></a></li>
+                     <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-2" style="text-decoration: none"><i class="material-icons">search</i></a></li>
+                     <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-3" style="text-decoration: none"><i class="material-icons" >person</i></a></li>
+                     <li ng-click="slideOnClick($event)" class="tab col s3"><a href="#test-swipe-4" style="text-decoration: none"><i class="material-icons" >message</i></a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+            <div id="test-swipe-1" class=" carousel-item col s12 blue" style="height:100vh;  width: 100%">Test 1</div>
+            <div id="test-swipe-2" class=" carousel-item col s12 red" style="height:1000vh; width: 100%">Test 2</div>
+            <div id="test-swipe-3" class=" carousel-item col s12 green" style="height:100vh; width: 100%">Test 3</div>
+            <div id="test-swipe-4" class=" carousel-item col s12 yellow" style="height:100vh; width: 100%">Test 4</div>
+       
       </div>
+      <div class=" col s12 yellow" style="height:100vh; width: 100%">Test 4</div>
 </body>
 </html>
    </body>

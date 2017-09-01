@@ -1,23 +1,23 @@
 $(document).ready(function(){
+
     $('ul.tabs').tabs({
       swipeable : true,
       responsiveThreshold :1920
     });
     $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 300
+      menuWidth: 250, // Default is 300
       edge: 'left', // Choose the horizontal origin
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true, // Choose whether you can drag to open on touch screens,
       onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
       onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
     });
-    $('.carousel.carousel-slider').carousel({fullWidth: true, noWrap:true});
     var lastScrollTop = 0;
 	$(window).scroll(function(event){
 	   var st = $(this).scrollTop();
 	   if (st > lastScrollTop){
 	       $('#menus').css({
-	       		"margin-top":"-50px",
+	       		"margin-top":"-60px",
 	       		"transition": "margin-top 0.2s"
 	       });
 	   } else {
@@ -34,13 +34,14 @@ $(document).ready(function(){
     $( "#slide-out" ).on( "swipeleft", function(){
     	$('.button-collapse').sideNav('hide');	
     });
+    
 });
 angular.module('Ninja', ['ngTouch'])  
 .controller('NinjaController', NinjaController);
 
 function NinjaController(widget, NinjaService) {
 
-
+	
 	
     widget.getData = function(){
       NinjaService.getReqBackend('php/ninja.php', {function: 'getInfoUsuario', php: 'ninja'}).then(function successCallback(response) {
@@ -54,51 +55,63 @@ function NinjaController(widget, NinjaService) {
     widget.OpenSideNavThroughLeftSwipe = function(){
     	$('.button-collapse').sideNav('show');	
     }
-
-    widget.moveIndicator = function(position){
-    	var fullWidth = screen.width / 1.35;
-    	var left = 0;
-    	var right = 0;
-    	switch (position){
-    		case 1 :
-    			left  = fullWidth;
-    			right = 0;
-    			break;
-    		case 2 :
-    			left  = fullWidth / 1.5;
-    			right = fullWidth - left;
-    			break;
-    		case 3 :
-    			right = fullWidth / 1.5;
-    			left  = fullWidth - right;
-    			break;
-    		case 4 :
-    			left  = 0;
-    			right = fullWidth;	
-    			break;
-    	}
-    	$('.indicator')[0].style.left = left;
-    	$('.indicator')[0].style.right = right;
-    }
-
-
+	
+	widget.slideTo = function (newContent, newContentPosition){
+		var screenSize = screen.width;
+		var multiplier = -1;
+		var orientation = false;
+		for(var index = newContentPosition; index<4;){
+			if(index === newContentPosition){
+				$($('.tabs-content')[0].children[index]).css({
+					"transform": "translateX(0px) translateX(0px) translateX(0px) translateZ(0px)"	
+				});	
+			}else{
+				$($('.tabs-content')[0].children[index]).css({
+					"transform": "translateX(0px) translateX("+multiplier*screenSize+"px) translateZ(0px)"	
+				});		
+			}
+			if(!orientation){
+				index --;
+				multiplier --;
+			}else{
+				index ++;
+				multiplier ++;
+			}
+			if(index<0){
+				index = newContentPosition+1;
+				multiplier = 1;
+				orientation = true;
+			}
+		}
+	};
+    
     widget.slideOnClick = function($event){
-    	var newContentId = $event.currentTarget.hash;
-    	var newContent   = $(newContentId);
+    	var newContentId = $event.currentTarget.children[0].hash;
+    	var newContent   = $(''+newContentId+'');
     	var newContentPosition = 0;
-    	$('ul.tabs').each(function(index, navs){
-    		if(navs.children[0] === $event.currentTarget)
-    			newContentPosition = index+1;
+    	$('ul.tabs').children().each(function(index, navs){
+    		if(navs === $event.currentTarget)
+    			newContentPosition = index;
     	});
-
+    	$('.carousel').carousel('set', newContentPosition);
+    	$(''+newContentId+'').trigger( "click" );
+    	
+/*
     	if(!newContent.hasClass('active')){
-    		var oldContent = $('li .active');
+    		var oldLink = $('a.active');
+    		var oldContent = $('.carousel-item.active');
     		oldContent.removeClass('active');
+    		oldLink.removeClass('active');
     		newContent.addClass('active');
-    		widget.moveIndicator(newContentPosition);
-    		widget.slide
-       	}
-    }
+    		$('.tabs-content').addClass('scrolling');
+    		widget.slideTo(newContent, newContentPosition);
+    		$('.tabs-content').removeClass('scrolling');
+       	}*/
+    };
+    
+    $( ".tabs li" ).on( "tap", function(event){
+    	widget.slideOnClick(event)
+    });
 	
 
     widget.getFeed = function() {

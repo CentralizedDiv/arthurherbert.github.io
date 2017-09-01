@@ -1605,7 +1605,7 @@ if (jQuery) {
         }
 
         // Reset clicked state
-        clickedTimeout = setTimeout(function(){ clicked = false; }, transition);
+        //clickedTimeout = setTimeout(function(){ clicked = false; }, transition);
 
         // Update indicator
         animateIndicator(prev_index);
