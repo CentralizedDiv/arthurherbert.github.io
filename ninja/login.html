@@ -52,14 +52,14 @@
                     <span class="input-group-addon">
                       <i class="material-icons">face</i>
                     </span>
-                    <input type="text" class="form-control" placeholder="Login...">
+                    <input type="text" class="form-control" placeholder="Login..." ng-model="usuario">
                   </div>
 
                   <div class="input-group">
                     <span class="input-group-addon">
                       <i class="material-icons">lock_outline</i>
                     </span>
-                    <input type="password" placeholder="Password..." class="form-control" />
+                    <input type="password" placeholder="Password..." class="form-control" / ng-model="password">
                   </div>
 
                   <!-- If you want to add a checkbox to this form, uncomment this code
@@ -72,7 +72,7 @@
                   </div> -->
                 </div>
                 <div class="footer text-center">
-                  <a class="btn btn-simple btn-danger btn-login btn-lg">Login</a>
+                  <a class="btn btn-simple btn-danger btn-login btn-lg" ng-click="login()">Login</a>
                 </div>
               </form>
             </div>
@@ -82,7 +82,7 @@
 
       <footer class="footer">
             <div class="container text-center">
-               <a class="btn btn-simple btn-white btn-lg ">Não tem conta? Cadastre-se</a>
+               <a href="signup.html"class="btn btn-simple btn-white btn-lg ">Não tem conta? Cadastre-se</a>
             </div>
         </footer>
 

@@ -1,47 +1,15 @@
-$(document).ready(function(){
-    $('ul.tabs').tabs({
-      swipeable : true,
-      responsiveThreshold : 1920,
-      onShow: function(tab){
-      	cosnole.log(tab);
-      }
-    });
-    $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 300
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      draggable: true, // Choose whether you can drag to open on touch screens,
-      onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
-      onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
-    });
-    var lastScrollTop = 0;
-	$(window).scroll(function(event){
-	   var st = $(this).scrollTop();
-	   if (st > lastScrollTop){
-	       $('#menus').css({
-	       		"margin-top":"-50px",
-	       		"transition": "margin-top 0.2s"
-	       });
-	   } else {
-	      $('#menus').css({
-	       		"margin-top":"0px",
-	       		"transition": "margin-top 0.3s"
-	       });
-	   }
-	   lastScrollTop = st;
-	});
-	console.log($('.indicator'));
-	
-});
 angular.module('Ninja', ['ngTouch'])  
 .controller('NinjaController', NinjaController);
 
 function NinjaController(widget, NinjaService) {
+	setJqueryFunctions();
 
     widget.getData = function(){
       NinjaService.getReqBackend('php/ninja.php', {function: 'getInfoUsuario', php: 'ninja'}).then(function successCallback(response) {
         this.fotoPerfil = response.data.foto;
         this.nome 		= response.data.nome;
+        this.nickname   = response.data.nickname;
+        this.cover      = response.data.cover;
       }.bind(this), function errorCallback(response) {
           return alert("Erro:" + response);
       });
@@ -57,6 +25,41 @@ function NinjaController(widget, NinjaService) {
 
 	widget.data       = widget.getData();
 	widget.feed  	  = widget.getFeed();
+
+	function setJqueryFunctions() {
+		$('ul.tabs').tabs({
+	      swipeable : true,
+	      responsiveThreshold : 1920,
+	      onShow: function(tab){
+	      	cosnole.log(tab);
+	      }
+	    });
+	    $('.button-collapse').sideNav({
+	      menuWidth: 300, // Default is 300
+	      edge: 'left', // Choose the horizontal origin
+	      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+	      draggable: true, // Choose whether you can drag to open on touch screens,
+	      onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
+	      onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
+	    });
+	    var lastScrollTop = 0;
+		$(window).scroll(function(event){
+		   var st = $(this).scrollTop();
+		   if (st > lastScrollTop){
+		       $('#menus').css({
+		       		"margin-top":"-50px",
+		       		"transition": "margin-top 0.2s"
+		       });
+		   } else {
+		      $('#menus').css({
+		       		"margin-top":"0px",
+		       		"transition": "margin-top 0.3s"
+		       });
+		   }
+		   lastScrollTop = st;
+		   console.log(st);
+		});
+	};
 
     widget.openSwipe = function(){
 		var swipe = $('#swipe');

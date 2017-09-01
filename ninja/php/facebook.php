@@ -19,8 +19,8 @@ class Facebook{
     
       $helper = new FacebookJavaScriptLoginHelper();
       try {
-        if(!isset($_COOKIE['ninja_accessToken'])) throw new Exception("Usuário não logado ou token espirado.", 1);
-        $session = new FacebookSession($_COOKIE['ninja_accessToken']);
+        if(!isset($_COOKIE['ninja_accessTokenFB'])) throw new Exception("Usuário não logado ou token espirado.", 1);
+        $session = new FacebookSession($_COOKIE['ninja_accessTokenFB']);
         $this->session = $session;
         $data = (array) json_decode($json);
         if($data['php'] == 'facebook') $this->$data['function']();
@@ -66,12 +66,16 @@ class Facebook{
 
   // Retorna o ID, nome, email e foto de perfil
   public function getMe() {
-    $response = (new FacebookRequest($this->session, 'GET', '/me?fields=id,name,email,picture'))->execute();
+    $response = (new FacebookRequest($this->session, 'GET', '/me?fields=id,name,email,picture,cover'))->execute();
     $me = (array) $response->getResponse();
     $me['picture'] = (array) $me['picture'];
     $me['picture']['data'] = (array) $me['picture']['data'];
     $me['picture'] = $me['picture']['data']['url'];
-    return $me;
+    $me['cover']   = (array) $me['cover'];
+    $me['cover']   = $me['cover']['source'];
+    $object = new stdClass();
+    $object->me = $me;
+    echo json_encode($object);
   }
 
 }
