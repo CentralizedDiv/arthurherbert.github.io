@@ -1,6 +1,26 @@
 var Login = angular.module('Login', []);
 var SignUp = angular.module('SignUp', []);
-var Ninja = angular.module('Ninja', ['ngTouch']);
+var Ninja = angular.module('Ninja', ["ngTouch", "ngRoute"]);
+
+Ninja.config(function(routeProvider){
+   $routeProvider
+  .when("/", {
+    templateUrl : "index.html"
+  })
+  .when("/search", {
+    templateUrl : "./templates/search.template.html",
+    controller : "searchController"
+  })
+  .when("/profile", {
+    templateUrl : "profile.htm"
+  })
+  .when("/messages", {
+    templateUrl : "messages.htm"
+  });    
+});
+Ninja.controller("searchController", function ($scope) {
+    $scope.msg = "I love London";
+});
 
 window.fbAsyncInit = function() {
   FB.init({

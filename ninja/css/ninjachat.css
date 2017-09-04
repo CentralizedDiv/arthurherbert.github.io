@@ -118,3 +118,14 @@ input[readonly]{
 .active{
   color:red;
 }
+.inline li{
+  display: inline;
+  list-style-type: none;
+}
+.btn li{
+  font-size: 2.3rem !important;
+}
+textarea.materialize-textarea{
+  border-bottom: none !important;
+  padding: none !important;
+}

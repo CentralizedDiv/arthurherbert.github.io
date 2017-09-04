@@ -2361,6 +2361,9 @@ if (jQuery) {
       options = $.extend(defaults, options);
 
       $(this).each(function(){
+        if($('.drag-target').length){
+          return;
+        }
         var $this = $(this);
         var menuId = $this.attr('data-activates');
         var menu = $("#"+ menuId);
@@ -7953,7 +7956,7 @@ Picker.extend( 'pickadate', DatePicker )
         }
 
         function tap(e) {
-          e.preventDefault();
+          //e.preventDefault();
           pressed = true;
           dragged = false;
           vertical_dragged = false;

@@ -29,8 +29,10 @@ $(document).ready(function(){
 		$("#slide-out").on("swipeleft", function() {
 			$('.button-collapse').sideNav('hide');
 		});
-		$("#test-swipe-1").on("swiperight", function() {
-			$('.button-collapse').sideNav('show');
+		$("#test-swipe-1").on("swiperight", function($event) {
+            if($('#sidenav-overlay').length === 0)
+            	$('button-collapse').sideNav('show');
+            	
 		});
 	});
 	$("#slide-out").on("swipeleft", function() {
@@ -38,15 +40,26 @@ $(document).ready(function(){
 	});
 	$("#test-swipe-1").on("swiperight", function() {
 		$('.button-collapse').sideNav('show');
+		
+		
 	});
+	$('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 100, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '0%', // Starting top style attribute
+      endingTop: '0%', // Ending top style attribute
+      ready: function(modal, trigger) {},
+      complete: function() {} // Callback for Modal close
+    }
+  );
 });
-angular.module('Ninja', ['ngTouch'])
+angular.module('Ninja', ["ngTouch", "ngRoute"])
 	.controller('NinjaController', NinjaController);
 
 function NinjaController(widget, NinjaService) {
 	setJqueryFunctions();
-
-
 
 	widget.getData = function() {
 		NinjaService.getReqBackend('php/Ninja.php', {
@@ -60,7 +73,7 @@ function NinjaController(widget, NinjaService) {
 				this.cover = response.data.cover;
 			}else{
 				this.fotoPerfil = 'imagens/default/defaultProfile.png';
-				this.cover      = 'imagens/default/cutmypic.png';
+				this.cover      = 'imagens/default/defaultCover.png';
 				this.nickname	= '@johndoe';
 				this.name		= 'John Doe';
 			}
