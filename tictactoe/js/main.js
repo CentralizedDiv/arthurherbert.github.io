@@ -149,7 +149,7 @@ $(document).ready(function() {
         var possibleWins;
         var lastField;
         if(mode === "easy"){
-            idToTrigger = boardFields[Math.floor(Math.random()*boardFields.length)];
+            idToTrigger = searchCornersorRandom();
         }else if(mode === "hard"){
             if(player1Fields.indexOf(5) === -1 && player2Fields.indexOf(5) === -1){
                 idToTrigger = 5;
@@ -182,7 +182,7 @@ $(document).ready(function() {
             if(idToTrigger === undefined && !winner){
                 var count = 0;
                 do{
-                    idToTrigger = boardFields[Math.floor(Math.random()*boardFields.length)];
+                    idToTrigger = searchCornersOrRandom();
                     if(idToTrigger === undefined || count > boardFields.length)
                         break;
                     player2Fields.push(idToTrigger);
@@ -192,6 +192,14 @@ $(document).ready(function() {
             }
         }     
         $('td#'+idToTrigger).trigger('click');
+    }
+    
+    function searchCornersOrRandom(){
+        boardFields.forEach(function(field){
+            if(field === 1 || field === 3 || field === 7 || field === 9)
+                return field;
+        });
+        return boardFields[Math.floor(Math.random()*boardFields.length)];    
     }
     
     function searchWin(returnId){
