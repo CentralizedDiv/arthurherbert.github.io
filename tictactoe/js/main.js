@@ -195,11 +195,15 @@ $(document).ready(function() {
     }
     
     function searchCornersOrRandom(){
+        var fieldToReturn;
         boardFields.forEach(function(field){
             if(field === 1 || field === 3 || field === 7 || field === 9)
-                return field;
+                fieldToReturn = field;
         });
-        return boardFields[Math.floor(Math.random()*boardFields.length)];    
+        if(fieldToReturn === undefined)
+            return boardFields[Math.floor(Math.random()*boardFields.length)];
+        else
+            return fieldToReturn;
     }
     
     function searchWin(returnId){
