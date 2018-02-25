@@ -197,7 +197,7 @@ $(document).ready(function() {
     function searchCornersOrRandom(){
         var fieldToReturn;
         boardFields.forEach(function(field){
-            if(field === 1 || field === 3 || field === 7 || field === 9)
+            if((field === 1 || field === 3 || field === 7 || field === 9) && player1Field.indexOf(5) !== -1)
                 fieldToReturn = field;
         });
         if(fieldToReturn === undefined)
