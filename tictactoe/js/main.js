@@ -208,7 +208,7 @@ $(document).ready(function() {
     function searchCornersOrRandom(){
         var fieldToReturn;
         boardFields.forEach(function(field){
-            if((field === 1 || field === 3 || field === 7 || field === 9) && player1Fields.indexOf(5) !== -1 && player2Fields.indexOf(field) === -1)
+            if((field === 1 || field === 3 || field === 7 || field === 9) && (player1Fields.indexOf(5) !== -1 || player2Fields.indexOf(5) === -1) && player2Fields.indexOf(field) === -1)
                 fieldToReturn = field;
             if(player1Fields.indexOf(5) === -1 && (field === 2 || field === 4 || field === 6 || field === 8) && player2Fields.indexOf(field) === -1)
                 fieldToReturn = field;
