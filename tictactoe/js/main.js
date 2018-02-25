@@ -181,7 +181,7 @@ $(document).ready(function() {
             }
             if(idToTrigger === undefined && !winner){
                 var count = 0;
-                var fields = player2Fields.splice();
+                var fields = player2Fields.slice();
                 do{
                     idToTrigger = searchCornersOrRandom();
                     if(idToTrigger === undefined || count > boardFields.length)
