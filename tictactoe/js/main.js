@@ -181,6 +181,7 @@ $(document).ready(function() {
             }
             if(idToTrigger === undefined && !winner){
                 var count = 0;
+                var fields = player2Fields.splice();
                 do{
                     idToTrigger = searchCornersOrRandom();
                     if(idToTrigger === undefined || count > boardFields.length)
@@ -188,7 +189,7 @@ $(document).ready(function() {
                     player2Fields.push(idToTrigger);
                     count++;
                 }while(!searchWin());
-                player2Fields.pop();
+                player2Fields = fields;
             }
         }     
         $('td#'+idToTrigger).trigger('click');
