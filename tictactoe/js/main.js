@@ -177,13 +177,7 @@ $(document).ready(function() {
             }else{
                 lastField = player2Fields[player2Fields.length-1];
                 possibleWins = filterWinnerGames(lastField);
-                possibleWins.forEach(function(winnerGame){
-                   winnerGame.forEach(function(field){
-                        if(boardFields.indexOf(field) !== -1 && idToTrigger === undefined){
-                            idToTrigger = field;   
-                        }
-                   }); 
-                });
+                idTotrigger = searchWin(true);
             }
             if(idToTrigger === undefined && !winner){
                 var count = 0;
@@ -200,7 +194,7 @@ $(document).ready(function() {
         $('td#'+idToTrigger).trigger('click');
     }
     
-    function searchWin(){
+    function searchWin(returnId){
         var lastField = player2Fields[player2Fields.length-1];
         var possibleWins = filterWinnerGames(lastField); 
         var win = false;
@@ -216,6 +210,13 @@ $(document).ready(function() {
             });
             if(matchedFields == 2){
                 win = true;
+                if(returnId){
+                    winnerGame.forEach(function(field){
+                        if(player2Fields.indexOf(field) === -1){
+                            win = field;
+                        }
+                    });    
+                }
             }
         });
         return win;
