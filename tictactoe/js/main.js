@@ -166,7 +166,7 @@ $(document).ready(function() {
                     idToTrigger = Math.floor(Math.random()*4)+1;
                     idToTrigger = (idToTrigger === 1) ? 1 : (idToTrigger === 2) ? 3 : (idToTrigger === 3) ? 7 : 9;   
                 }
-           }else if(player1Fields.length === 2){
+           }else if(player1Fields.length === 2 && player1Fields.indexOf(5) === -1){
                 if(player1Fields.indexOf(1) !== -1)
                     idToTrigger = 7;
                 if(player1Fields.indexOf(3) !== -1)
