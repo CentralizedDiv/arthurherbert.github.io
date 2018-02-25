@@ -151,11 +151,21 @@ $(document).ready(function() {
         if(mode === "easy"){
             idToTrigger = searchCornersorRandom();
         }else if(mode === "hard"){
-            if(player1Fields.indexOf(5) === -1 && player2Fields.indexOf(5) === -1){
-                idToTrigger = 5;
-            }else if(player1Fields.length === 1){
-                idToTrigger = Math.floor(Math.random()*4)+1;
-                idToTrigger = (idToTrigger === 1) ? 1 : (idToTrigger === 2) ? 3 : (idToTrigger === 3) ? 7 : 9;   
+            if(player1Fields.length === 1){
+                if(player1Fields.indexOf(2) !== -1)
+                   idToTrigger = 8;
+                if(player1Fields.indexOf(8) !== -1)
+                   idToTrigger = 2;
+                if(player1Fields.indexOf(4) !== -1)
+                   idToTrigger = 6;
+                if(player1Fields.indexOf(6) !== -1)
+                   idToTrigger = 4;
+                if(player1Fields.indexOf(1) !== -1 || player1Fields.indexOf(3) !== -1 || player1Fields.indexOf(7) !== -1 || player1Fields.indexOf(9) !== -1)
+                   idToTrigger = 5;
+                if(idToTrigger === undefined){
+                    idToTrigger = Math.floor(Math.random()*4)+1;
+                    idToTrigger = (idToTrigger === 1) ? 1 : (idToTrigger === 2) ? 3 : (idToTrigger === 3) ? 7 : 9;   
+                }                
             }else if(!searchWin()){
                 lastField = player1Fields[player1Fields.length-1];
                 possibleWins = filterWinnerGames(lastField);
