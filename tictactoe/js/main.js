@@ -168,13 +168,13 @@ $(document).ready(function() {
                 }
            }else if(player1Fields.length === 2){
                 if(player1Fields.indexOf(1) !== -1)
-                    idToTrigger = 3;
+                    idToTrigger = 7;
                 if(player1Fields.indexOf(3) !== -1)
-                   idToTrigger = 1;
-                if(player1Fields.indexOf(7) !== -1)
                    idToTrigger = 9;
+                if(player1Fields.indexOf(7) !== -1)
+                   idToTrigger = 1;
                 if(player1Fields.indexOf(9) !== -1)
-                   idToTrigger = 7;                
+                   idToTrigger = 3;                
             }else if(!searchWin()){
                 lastField = player1Fields[player1Fields.length-1];
                 possibleWins = filterWinnerGames(lastField);
