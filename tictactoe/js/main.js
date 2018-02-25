@@ -177,7 +177,7 @@ $(document).ready(function() {
             }else{
                 lastField = player2Fields[player2Fields.length-1];
                 possibleWins = filterWinnerGames(lastField);
-                idTotrigger = searchWin(true);
+                idToTrigger = searchWin(true);
             }
             if(idToTrigger === undefined && !winner){
                 var count = 0;
