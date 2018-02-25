@@ -179,7 +179,7 @@ $(document).ready(function() {
                 possibleWins = filterWinnerGames(lastField);
                 possibleWins.forEach(function(winnerGame){
                    winnerGame.forEach(function(field){
-                        if(boardFields.indexOf(field) !== -1 && idToTrigger !== undefined){
+                        if(boardFields.indexOf(field) !== -1 && idToTrigger === undefined){
                             idToTrigger = field;   
                         }
                    }); 
