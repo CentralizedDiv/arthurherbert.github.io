@@ -1,0 +1,10 @@
+.card-image {
+    height: 200px;
+    width: auto;
+}
+
+.card-image > img {
+    margin:auto;
+    width: auto !important;
+    min-height: 200px !important;    
+}
